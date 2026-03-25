@@ -1,30 +1,3 @@
-// === Terminal Animation ===
-function initTerminalAnimation() {
-  var terminal = document.getElementById('terminalDemo');
-  if (!terminal) return;
-
-  var lines = terminal.querySelectorAll('.term-line');
-  var animated = false;
-
-  var observer = new IntersectionObserver(
-    function (entries) {
-      entries.forEach(function (entry) {
-        if (entry.isIntersecting && !animated) {
-          animated = true;
-          lines.forEach(function (line) {
-            var delay = parseInt(line.dataset.delay, 10) * 400;
-            setTimeout(function () { line.classList.add('show'); }, delay);
-          });
-          observer.unobserve(terminal);
-        }
-      });
-    },
-    { threshold: 0.3 }
-  );
-
-  observer.observe(terminal);
-}
-
 // === Clipboard Copy ===
 function initClipboardCopy() {
   document.querySelectorAll('.copy-btn').forEach(function (btn) {
@@ -99,7 +72,6 @@ function initScrollFadeIn() {
 
 // === Init ===
 document.addEventListener('DOMContentLoaded', function () {
-  initTerminalAnimation();
   initClipboardCopy();
   initFaqAccordion();
   initScrollFadeIn();
