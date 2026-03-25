@@ -1,302 +1,505 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>rwd — Your AI sessions, journaled</title>
-  <meta name="description" content="CLI tool that extracts decisions, learnings, and corrections from AI coding sessions and saves them as Obsidian Daily Notes.">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>rwd - Your AI sessions, journaled</title>
+    <meta
+      name="description"
+      content="CLI tool that extracts decisions, learnings, and corrections from AI coding sessions and saves them as Obsidian Daily Notes."
+    />
 
-  <!-- Open Graph -->
-  <meta property="og:title" content="rwd — Your AI sessions, journaled">
-  <meta property="og:description" content="CLI tool that extracts decisions, learnings, and corrections from AI coding sessions and saves them as Obsidian Daily Notes.">
-  <meta property="og:type" content="website">
-  <meta property="og:image" content="assets/og-image.png">
+    <!-- Open Graph -->
+    <meta property="og:title" content="rwd — Your AI sessions, journaled" />
+    <meta
+      property="og:description"
+      content="CLI tool that extracts decisions, learnings, and corrections from AI coding sessions and saves them as Obsidian Daily Notes."
+    />
+    <meta property="og:type" content="website" />
+    <meta property="og:image" content="assets/og-image.png" />
 
-  <!-- Twitter -->
-  <meta name="twitter:card" content="summary_large_image">
-  <meta name="twitter:title" content="rwd — Your AI sessions, journaled">
-  <meta name="twitter:description" content="CLI tool that extracts decisions, learnings, and corrections from AI coding sessions and saves them as Obsidian Daily Notes.">
+    <!-- Twitter -->
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="rwd — Your AI sessions, journaled" />
+    <meta
+      name="twitter:description"
+      content="CLI tool that extracts decisions, learnings, and corrections from AI coding sessions and saves them as Obsidian Daily Notes."
+    />
 
-  <!-- Schema.org -->
-  <script type="application/ld+json">
-  {
-    "@context": "https://schema.org",
-    "@type": "SoftwareApplication",
-    "name": "rwd",
-    "description": "CLI tool that extracts decisions, learnings, and corrections from AI coding sessions and saves them as Obsidian Daily Notes.",
-    "applicationCategory": "DeveloperApplication",
-    "operatingSystem": "macOS, Windows, Linux",
-    "offers": { "@type": "Offer", "price": "0" },
-    "license": "https://opensource.org/licenses/MIT",
-    "url": "https://github.com/gigagookbob/rwd"
-  }
-  </script>
+    <!-- Schema.org -->
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "SoftwareApplication",
+        "name": "rwd",
+        "description": "CLI tool that extracts decisions, learnings, and corrections from AI coding sessions and saves them as Obsidian Daily Notes.",
+        "applicationCategory": "DeveloperApplication",
+        "operatingSystem": "macOS, Windows, Linux",
+        "offers": { "@type": "Offer", "price": "0" },
+        "license": "https://opensource.org/licenses/MIT",
+        "url": "https://github.com/gigagookbob/rwd"
+      }
+    </script>
 
-  <link rel="stylesheet" href="css/style.css">
-  <script>try{if(localStorage.getItem('rwd-lang')==='ko')document.documentElement.classList.add('i18n-loading')}catch(e){}</script>
-</head>
-<body>
-
-  <!-- Nav -->
-  <nav class="nav">
-    <div class="nav-inner">
-      <div class="nav-left">
-        <a href="/" class="nav-logo">rwd</a>
-        <div class="nav-links">
-          <a href="https://github.com/gigagookbob/rwd" target="_blank" rel="noopener"><svg class="icon" width="16" height="16" viewBox="0 0 32 32" fill="currentColor" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" clip-rule="evenodd" d="M16 0C7.16 0 0 7.16 0 16C0 23.08 4.58 29.06 10.94 31.18C11.74 31.32 12.04 30.84 12.04 30.42C12.04 30.04 12.02 28.78 12.02 27.44C8 28.18 6.96 26.46 6.64 25.56C6.46 25.1 5.68 23.68 5 23.3C4.44 23 3.64 22.26 4.98 22.24C6.24 22.22 7.14 23.4 7.44 23.88C8.88 26.3 11.18 25.62 12.1 25.2C12.24 24.16 12.66 23.46 13.12 23.06C9.56 22.66 5.84 21.28 5.84 15.16C5.84 13.42 6.46 11.98 7.48 10.86C7.32 10.46 6.76 8.82 7.64 6.62C7.64 6.62 8.98 6.2 12.04 8.26C13.32 7.9 14.68 7.72 16.04 7.72C17.4 7.72 18.76 7.9 20.04 8.26C23.1 6.18 24.44 6.62 24.44 6.62C25.32 8.82 24.76 10.46 24.6 10.86C25.62 11.98 26.24 13.4 26.24 15.16C26.24 21.3 22.5 22.66 18.94 23.06C19.52 23.56 20.02 24.52 20.02 26.02C20.02 28.16 20 29.88 20 30.42C20 30.84 20.3 31.34 21.1 31.18C27.42 29.06 32 23.06 32 16C32 7.16 24.84 0 16 0Z"/></svg> GitHub</a>
-          <a href="https://github.com/gigagookbob/rwd#readme" target="_blank" rel="noopener" data-i18n="nav.docs">Docs</a>
-        </div>
-      </div>
-      <div class="nav-right">
-        <button class="lang-toggle" id="langToggle" aria-label="Toggle language">
-          <span class="lang-option active" data-lang="en">EN</span>
-          <span class="lang-separator">/</span>
-          <span class="lang-option" data-lang="ko">KO</span>
-        </button>
-        <a href="https://github.com/gigagookbob/rwd" target="_blank" rel="noopener" class="nav-github-btn">
-          <svg class="icon" width="14" height="14" viewBox="0 0 32 32" fill="currentColor" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" clip-rule="evenodd" d="M16 0C7.16 0 0 7.16 0 16C0 23.08 4.58 29.06 10.94 31.18C11.74 31.32 12.04 30.84 12.04 30.42C12.04 30.04 12.02 28.78 12.02 27.44C8 28.18 6.96 26.46 6.64 25.56C6.46 25.1 5.68 23.68 5 23.3C4.44 23 3.64 22.26 4.98 22.24C6.24 22.22 7.14 23.4 7.44 23.88C8.88 26.3 11.18 25.62 12.1 25.2C12.24 24.16 12.66 23.46 13.12 23.06C9.56 22.66 5.84 21.28 5.84 15.16C5.84 13.42 6.46 11.98 7.48 10.86C7.32 10.46 6.76 8.82 7.64 6.62C7.64 6.62 8.98 6.2 12.04 8.26C13.32 7.9 14.68 7.72 16.04 7.72C17.4 7.72 18.76 7.9 20.04 8.26C23.1 6.18 24.44 6.62 24.44 6.62C25.32 8.82 24.76 10.46 24.6 10.86C25.62 11.98 26.24 13.4 26.24 15.16C26.24 21.3 22.5 22.66 18.94 23.06C19.52 23.56 20.02 24.52 20.02 26.02C20.02 28.16 20 29.88 20 30.42C20 30.84 20.3 31.34 21.1 31.18C27.42 29.06 32 23.06 32 16C32 7.16 24.84 0 16 0Z"/></svg> <span data-i18n="nav.star">Star on GitHub</span>
-        </a>
-      </div>
-    </div>
-  </nav>
-
-  <!-- Hero -->
-  <section class="hero">
-    <div class="container">
-      <h1 class="hero-title" data-i18n="hero.title">Your AI sessions, journaled.</h1>
-      <p class="hero-subtitle" data-i18n="hero.subtitle">Extracts decisions, learnings, and model corrections from your AI coding sessions. Saves them as Obsidian Daily Notes.</p>
-      <div class="hero-cta">
-        <a href="#install" class="btn btn-primary" data-i18n="hero.install">Install</a>
-        <a href="https://github.com/gigagookbob/rwd" target="_blank" rel="noopener" class="btn btn-secondary"><svg class="icon" width="16" height="16" viewBox="0 0 32 32" fill="currentColor"><path fill-rule="evenodd" clip-rule="evenodd" d="M16 0C7.16 0 0 7.16 0 16C0 23.08 4.58 29.06 10.94 31.18C11.74 31.32 12.04 30.84 12.04 30.42C12.04 30.04 12.02 28.78 12.02 27.44C8 28.18 6.96 26.46 6.64 25.56C6.46 25.1 5.68 23.68 5 23.3C4.44 23 3.64 22.26 4.98 22.24C6.24 22.22 7.14 23.4 7.44 23.88C8.88 26.3 11.18 25.62 12.1 25.2C12.24 24.16 12.66 23.46 13.12 23.06C9.56 22.66 5.84 21.28 5.84 15.16C5.84 13.42 6.46 11.98 7.48 10.86C7.32 10.46 6.76 8.82 7.64 6.62C7.64 6.62 8.98 6.2 12.04 8.26C13.32 7.9 14.68 7.72 16.04 7.72C17.4 7.72 18.76 7.9 20.04 8.26C23.1 6.18 24.44 6.62 24.44 6.62C25.32 8.82 24.76 10.46 24.6 10.86C25.62 11.98 26.24 13.4 26.24 15.16C26.24 21.3 22.5 22.66 18.94 23.06C19.52 23.56 20.02 24.52 20.02 26.02C20.02 28.16 20 29.88 20 30.42C20 30.84 20.3 31.34 21.1 31.18C27.42 29.06 32 23.06 32 16C32 7.16 24.84 0 16 0Z"/></svg> <span data-i18n="hero.github">View on GitHub</span></a>
-      </div>
-    </div>
-  </section>
-
-  <!-- Terminal Demo -->
-  <section class="terminal-section">
-    <div class="container">
-      <div class="terminal" id="terminalDemo">
-        <div class="terminal-header">
-          <div class="terminal-dots">
-            <span class="dot dot-red"></span>
-            <span class="dot dot-yellow"></span>
-            <span class="dot dot-green"></span>
-          </div>
-          <span class="terminal-title">Terminal</span>
-        </div>
-        <div class="terminal-body">
-          <div class="term-line" data-delay="0"><span class="term-prompt">$ </span><span class="term-cmd">rwd today</span></div>
-          <div class="term-line" data-delay="1"><span class="term-muted">&#x2807; Discovering sessions...</span></div>
-          <div class="term-line" data-delay="2"><span class="term-muted">  Found 3 Claude Code sessions</span></div>
-          <div class="term-line" data-delay="3"><span class="term-muted">&#x2807; Analyzing with Claude API...</span></div>
-          <div class="term-line" data-delay="4"><span class="term-muted">  &#9484; Decisions &#9472;&#9472;&#9472;&#9472;&#9472;&#9472;&#9472;&#9472;&#9472;&#9472;&#9472;&#9472;&#9472;&#9472;&#9472;&#9472;&#9472;&#9472;&#9472;&#9472;&#9472;&#9472;&#9472;&#9472;&#9472;</span></div>
-          <div class="term-line" data-delay="5"><span class="term-text">  &#9474; Chose Axum over Actix-web for</span></div>
-          <div class="term-line" data-delay="6"><span class="term-text">  &#9474; its simpler middleware API</span></div>
-          <div class="term-line" data-delay="7"><span class="term-muted">  &#9492;&#9472;&#9472;&#9472;&#9472;&#9472;&#9472;&#9472;&#9472;&#9472;&#9472;&#9472;&#9472;&#9472;&#9472;&#9472;&#9472;&#9472;&#9472;&#9472;&#9472;&#9472;&#9472;&#9472;&#9472;&#9472;&#9472;&#9472;&#9472;&#9472;&#9472;&#9472;&#9472;</span></div>
-          <div class="term-line" data-delay="8"><span class="term-success">&#10003; Saved to ~/Vault/Daily/2025-03-24.md</span></div>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <div class="divider"></div>
-
-  <!-- Comparison -->
-  <section class="section fade-in">
-    <div class="container">
-      <h2 class="section-title" data-i18n="comparison.title">Not another efficiency report.</h2>
-      <p class="section-subtitle" data-i18n="comparison.subtitle">rwd is a developer journal, not a dashboard.</p>
-      <div class="comparison-grid">
-        <div class="comparison-card comparison-other">
-          <div class="comparison-label" data-i18n="comparison.insights.label">Claude /insights</div>
-          <ul class="comparison-list">
-            <li data-i18n="comparison.insights.item1">Tool usage patterns</li>
-            <li data-i18n="comparison.insights.item2">Token consumption</li>
-            <li data-i18n="comparison.insights.item3">30-day HTML report</li>
-            <li data-i18n="comparison.insights.item4">Quantitative</li>
-          </ul>
-        </div>
-        <div class="comparison-card comparison-rwd">
-          <div class="comparison-label" data-i18n="comparison.rwd.label">rwd</div>
-          <ul class="comparison-list">
-            <li data-i18n="comparison.rwd.item1">Decisions &amp; reasoning</li>
-            <li data-i18n="comparison.rwd.item2">Learnings &amp; corrections</li>
-            <li data-i18n="comparison.rwd.item3">Daily Obsidian notes</li>
-            <li data-i18n="comparison.rwd.item4">Qualitative</li>
-          </ul>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <div class="divider"></div>
-
-  <!-- Features -->
-  <section class="section fade-in">
-    <div class="container">
-      <h2 class="section-title" data-i18n="features.title">What rwd extracts</h2>
-      <div class="section-subtitle-spacer"></div>
-      <div class="features-grid">
-        <div class="feature-card">
-          <h3 class="feature-name" data-i18n="features.decisions.title">Decisions</h3>
-          <p class="feature-desc" data-i18n="features.decisions.desc">Why you chose A over B. Captured with reasoning.</p>
-        </div>
-        <div class="feature-card">
-          <h3 class="feature-name" data-i18n="features.learnings.title">Learnings</h3>
-          <p class="feature-desc" data-i18n="features.learnings.desc">Things you were curious or confused about.</p>
-        </div>
-        <div class="feature-card">
-          <h3 class="feature-name" data-i18n="features.corrections.title">Corrections</h3>
-          <p class="feature-desc" data-i18n="features.corrections.desc">When you fixed the AI's mistakes. What went wrong and how.</p>
-        </div>
-        <div class="feature-card">
-          <h3 class="feature-name" data-i18n="features.privacy.title">Privacy</h3>
-          <p class="feature-desc" data-i18n="features.privacy.desc">Sensitive data auto-masked before LLM analysis.</p>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <div class="divider"></div>
-
-  <!-- Install -->
-  <section class="section fade-in" id="install">
-    <div class="container">
-      <h2 class="section-title" data-i18n="install.title">Install in seconds</h2>
-      <div class="section-subtitle-spacer"></div>
-      <div class="install-blocks">
-        <div class="install-block">
-          <div class="install-info">
-            <span class="install-platform">macOS (Apple Silicon)</span>
-            <code class="install-cmd">curl -fsSL https://raw.githubusercontent.com/gigagookbob/rwd/main/install.sh | sh</code>
-          </div>
-          <button class="copy-btn" data-copy="curl -fsSL https://raw.githubusercontent.com/gigagookbob/rwd/main/install.sh | sh" data-i18n="install.copy">Copy</button>
-        </div>
-        <div class="install-block">
-          <div class="install-info">
-            <span class="install-platform">Windows</span>
-            <code class="install-cmd">irm https://raw.githubusercontent.com/gigagookbob/rwd/main/install.ps1 | iex</code>
-          </div>
-          <button class="copy-btn" data-copy="irm https://raw.githubusercontent.com/gigagookbob/rwd/main/install.ps1 | iex" data-i18n="install.copy">Copy</button>
-        </div>
-        <div class="install-block">
-          <div class="install-info">
-            <span class="install-platform" data-i18n="install.source">Build from source</span>
-            <code class="install-cmd">cargo install --git https://github.com/gigagookbob/rwd.git</code>
-          </div>
-          <button class="copy-btn" data-copy="cargo install --git https://github.com/gigagookbob/rwd.git" data-i18n="install.copy">Copy</button>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <div class="divider"></div>
-
-  <!-- Output Example -->
-  <section class="section fade-in">
-    <div class="container">
-      <h2 class="section-title" data-i18n="output.title">From sessions to journal</h2>
-      <p class="section-subtitle" data-i18n="output.subtitle">Raw AI logs become structured daily notes.</p>
-      <div class="output-split">
-        <div class="output-panel output-before">
-          <div class="output-label" data-i18n="output.before">Session Logs</div>
-          <div class="output-code">
-            <code>{"type":"human","text":"let's use axum instead"}</code>
-            <code>{"type":"assistant","text":"Good choice. Axum..."}</code>
-            <code>{"type":"human","text":"wait, that's wrong"}</code>
-            <code>{"type":"tool_use","name":"Edit",...}</code>
+    <link rel="stylesheet" href="css/style.css" />
+    <script>
+      try {
+        if (localStorage.getItem("rwd-lang") === "ko")
+          document.documentElement.classList.add("i18n-loading");
+      } catch (e) {}
+    </script>
+  </head>
+  <body>
+    <!-- Nav -->
+    <nav class="nav">
+      <div class="nav-inner">
+        <div class="nav-left">
+          <a href="/" class="nav-logo">rwd</a>
+          <div class="nav-links">
+            <a
+              href="https://github.com/gigagookbob/rwd"
+              target="_blank"
+              rel="noopener"
+              ><svg
+                class="icon"
+                width="16"
+                height="16"
+                viewBox="0 0 32 32"
+                fill="currentColor"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path
+                  fill-rule="evenodd"
+                  clip-rule="evenodd"
+                  d="M16 0C7.16 0 0 7.16 0 16C0 23.08 4.58 29.06 10.94 31.18C11.74 31.32 12.04 30.84 12.04 30.42C12.04 30.04 12.02 28.78 12.02 27.44C8 28.18 6.96 26.46 6.64 25.56C6.46 25.1 5.68 23.68 5 23.3C4.44 23 3.64 22.26 4.98 22.24C6.24 22.22 7.14 23.4 7.44 23.88C8.88 26.3 11.18 25.62 12.1 25.2C12.24 24.16 12.66 23.46 13.12 23.06C9.56 22.66 5.84 21.28 5.84 15.16C5.84 13.42 6.46 11.98 7.48 10.86C7.32 10.46 6.76 8.82 7.64 6.62C7.64 6.62 8.98 6.2 12.04 8.26C13.32 7.9 14.68 7.72 16.04 7.72C17.4 7.72 18.76 7.9 20.04 8.26C23.1 6.18 24.44 6.62 24.44 6.62C25.32 8.82 24.76 10.46 24.6 10.86C25.62 11.98 26.24 13.4 26.24 15.16C26.24 21.3 22.5 22.66 18.94 23.06C19.52 23.56 20.02 24.52 20.02 26.02C20.02 28.16 20 29.88 20 30.42C20 30.84 20.3 31.34 21.1 31.18C27.42 29.06 32 23.06 32 16C32 7.16 24.84 0 16 0Z"
+                />
+              </svg>
+              GitHub</a
+            >
+            <a
+              href="https://github.com/gigagookbob/rwd#readme"
+              target="_blank"
+              rel="noopener"
+              data-i18n="nav.docs"
+              >Docs</a
+            >
           </div>
         </div>
-        <div class="output-arrow">&rarr;</div>
-        <div class="output-panel output-after">
-          <div class="output-label" data-i18n="output.after">Daily Note</div>
-          <div class="output-md">
-            <div class="md-heading">## Decisions</div>
-            <div class="md-text">- Chose Axum over Actix-web for its simpler middleware API</div>
-            <div class="md-heading">## Corrections</div>
-            <div class="md-text">- Fixed incorrect middleware setup &mdash; assistant suggested outdated pattern</div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <div class="divider"></div>
-
-  <!-- FAQ -->
-  <section class="section fade-in">
-    <div class="container">
-      <h2 class="section-title">FAQ</h2>
-      <div class="section-subtitle-spacer"></div>
-      <div class="faq-list">
-        <div class="faq-item">
-          <button class="faq-question" aria-expanded="false">
-            <span data-i18n="faq.q1">Which AI tools are supported?</span>
-            <span class="faq-icon">+</span>
+        <div class="nav-right">
+          <button
+            class="lang-toggle"
+            id="langToggle"
+            aria-label="Toggle language"
+          >
+            <span class="lang-option active" data-lang="en">EN</span>
+            <span class="lang-separator">/</span>
+            <span class="lang-option" data-lang="ko">KO</span>
           </button>
-          <div class="faq-answer">
-            <p data-i18n="faq.a1">Claude Code and Codex. More coming soon.</p>
-          </div>
+          <a
+            href="https://github.com/gigagookbob/rwd"
+            target="_blank"
+            rel="noopener"
+            class="nav-github-btn"
+          >
+            <svg
+              class="icon"
+              width="14"
+              height="14"
+              viewBox="0 0 32 32"
+              fill="currentColor"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                fill-rule="evenodd"
+                clip-rule="evenodd"
+                d="M16 0C7.16 0 0 7.16 0 16C0 23.08 4.58 29.06 10.94 31.18C11.74 31.32 12.04 30.84 12.04 30.42C12.04 30.04 12.02 28.78 12.02 27.44C8 28.18 6.96 26.46 6.64 25.56C6.46 25.1 5.68 23.68 5 23.3C4.44 23 3.64 22.26 4.98 22.24C6.24 22.22 7.14 23.4 7.44 23.88C8.88 26.3 11.18 25.62 12.1 25.2C12.24 24.16 12.66 23.46 13.12 23.06C9.56 22.66 5.84 21.28 5.84 15.16C5.84 13.42 6.46 11.98 7.48 10.86C7.32 10.46 6.76 8.82 7.64 6.62C7.64 6.62 8.98 6.2 12.04 8.26C13.32 7.9 14.68 7.72 16.04 7.72C17.4 7.72 18.76 7.9 20.04 8.26C23.1 6.18 24.44 6.62 24.44 6.62C25.32 8.82 24.76 10.46 24.6 10.86C25.62 11.98 26.24 13.4 26.24 15.16C26.24 21.3 22.5 22.66 18.94 23.06C19.52 23.56 20.02 24.52 20.02 26.02C20.02 28.16 20 29.88 20 30.42C20 30.84 20.3 31.34 21.1 31.18C27.42 29.06 32 23.06 32 16C32 7.16 24.84 0 16 0Z"
+              />
+            </svg>
+            <span data-i18n="nav.star">Star on GitHub</span>
+          </a>
         </div>
-        <div class="faq-item">
-          <button class="faq-question" aria-expanded="false">
-            <span data-i18n="faq.q2">Do I need Obsidian?</span>
-            <span class="faq-icon">+</span>
-          </button>
-          <div class="faq-answer">
-            <p data-i18n="faq.a2">No. Output goes to any directory as .md files. Obsidian is optional.</p>
-          </div>
+      </div>
+    </nav>
+
+    <!-- Hero -->
+    <section class="hero">
+      <div class="container">
+        <h1 class="hero-title" data-i18n="hero.title">
+          Your AI sessions, journaled.
+        </h1>
+        <p class="hero-subtitle" data-i18n="hero.subtitle">
+          Extracts decisions, learnings, and model corrections from your AI
+          coding sessions. Saves them as Obsidian Daily Notes.
+        </p>
+        <div class="hero-cta">
+          <a href="#install" class="btn btn-primary" data-i18n="hero.install"
+            >Install</a
+          >
+          <a
+            href="https://github.com/gigagookbob/rwd"
+            target="_blank"
+            rel="noopener"
+            class="btn btn-secondary"
+            ><svg
+              class="icon"
+              width="16"
+              height="16"
+              viewBox="0 0 32 32"
+              fill="currentColor"
+            >
+              <path
+                fill-rule="evenodd"
+                clip-rule="evenodd"
+                d="M16 0C7.16 0 0 7.16 0 16C0 23.08 4.58 29.06 10.94 31.18C11.74 31.32 12.04 30.84 12.04 30.42C12.04 30.04 12.02 28.78 12.02 27.44C8 28.18 6.96 26.46 6.64 25.56C6.46 25.1 5.68 23.68 5 23.3C4.44 23 3.64 22.26 4.98 22.24C6.24 22.22 7.14 23.4 7.44 23.88C8.88 26.3 11.18 25.62 12.1 25.2C12.24 24.16 12.66 23.46 13.12 23.06C9.56 22.66 5.84 21.28 5.84 15.16C5.84 13.42 6.46 11.98 7.48 10.86C7.32 10.46 6.76 8.82 7.64 6.62C7.64 6.62 8.98 6.2 12.04 8.26C13.32 7.9 14.68 7.72 16.04 7.72C17.4 7.72 18.76 7.9 20.04 8.26C23.1 6.18 24.44 6.62 24.44 6.62C25.32 8.82 24.76 10.46 24.6 10.86C25.62 11.98 26.24 13.4 26.24 15.16C26.24 21.3 22.5 22.66 18.94 23.06C19.52 23.56 20.02 24.52 20.02 26.02C20.02 28.16 20 29.88 20 30.42C20 30.84 20.3 31.34 21.1 31.18C27.42 29.06 32 23.06 32 16C32 7.16 24.84 0 16 0Z"
+              />
+            </svg>
+            <span data-i18n="hero.github">View on GitHub</span></a
+          >
         </div>
-        <div class="faq-item">
-          <button class="faq-question" aria-expanded="false">
-            <span data-i18n="faq.q3">Is it free?</span>
-            <span class="faq-icon">+</span>
-          </button>
-          <div class="faq-answer">
-            <p data-i18n="faq.a3">Yes. MIT licensed, fully open source. You just need your own LLM API key.</p>
+      </div>
+    </section>
+
+    <!-- Terminal Demo -->
+    <section class="terminal-section">
+      <div class="container">
+        <div class="terminal" id="terminalDemo">
+          <div class="terminal-header">
+            <div class="terminal-dots">
+              <span class="dot dot-red"></span>
+              <span class="dot dot-yellow"></span>
+              <span class="dot dot-green"></span>
+            </div>
+            <span class="terminal-title">Terminal</span>
           </div>
+<!-- prettier-ignore -->
+<pre class="terminal-body"><div class="term-line" data-delay="0"><span class="term-prompt">$ </span><span class="term-cmd">rwd today</span></div>
+<div class="term-line" data-delay="1"> </div>
+<div class="term-line term-ascii" data-delay="2"><span class="term-cyan">  ██████  ██     ██ ██████</span></div>
+<div class="term-line term-ascii" data-delay="2"><span class="term-cyan">  ██   ██ ██     ██ ██   ██</span></div>
+<div class="term-line term-ascii" data-delay="2"><span class="term-cyan">  ██████  ██  █  ██ ██   ██</span>     <span class="term-dim">rewind your day  v0.11.0</span></div>
+<div class="term-line term-ascii" data-delay="2"><span class="term-cyan">  ██   ██ ██ ███ ██ ██   ██</span></div>
+<div class="term-line term-ascii" data-delay="2"><span class="term-cyan">  ██   ██  ███ ███  ██████</span></div>
+<div class="term-line" data-delay="3"> </div>
+<div class="term-line" data-delay="4"><span class="term-muted">  ┌──────────────────────────────────────────┐</span></div>
+<div class="term-line" data-delay="4"><span class="term-muted">  │</span>  <span class="term-text">2026-03-25 09:29</span>                        <span class="term-muted">│</span></div>
+<div class="term-line" data-delay="4"><span class="term-muted">  ├──────────────────────────────────────────┤</span></div>
+<div class="term-line" data-delay="4"><span class="term-muted">  │</span>  <span class="term-blue">Claude Code</span>                             <span class="term-muted">│</span></div>
+<div class="term-line" data-delay="4"><span class="term-muted">  │</span>  <span class="term-text">08:56 ~ 09:29</span>                           <span class="term-muted">│</span></div>
+<div class="term-line" data-delay="4"><span class="term-muted">  │</span>  <span class="term-text">Sessions: 3  in 847,291  out 24,108</span>     <span class="term-muted">│</span></div>
+<div class="term-line" data-delay="4"><span class="term-muted">  └──────────────────────────────────────────┘</span></div>
+<div class="term-line" data-delay="5"> </div>
+<div class="term-line" data-delay="6"><span class="term-magenta">Analyzing insights via Claude API...</span></div>
+<div class="term-line" data-delay="7"><span class="term-success">✓</span> <span class="term-text">Done in 8.3s (input: 7209 / output: 1842)</span></div>
+<div class="term-line" data-delay="8"> </div>
+<div class="term-line" data-delay="9"><span class="term-success">Markdown saved: ~/Vault/Daily/2026-03-25.md</span></div></pre>
         </div>
-        <div class="faq-item">
-          <button class="faq-question" aria-expanded="false">
-            <span data-i18n="faq.q4">What LLM providers are supported?</span>
-            <span class="faq-icon">+</span>
-          </button>
-          <div class="faq-answer">
-            <p data-i18n="faq.a4">Anthropic Claude and OpenAI.</p>
+      </div>
+    </section>
+
+    <div class="divider"></div>
+
+    <!-- Comparison -->
+    <section class="section fade-in">
+      <div class="container">
+        <h2 class="section-title" data-i18n="comparison.title">
+          Not another efficiency report.
+        </h2>
+        <p class="section-subtitle" data-i18n="comparison.subtitle">
+          rwd is a developer journal, not a dashboard.
+        </p>
+        <div class="comparison-grid">
+          <div class="comparison-card comparison-other">
+            <div class="comparison-label" data-i18n="comparison.insights.label">
+              Claude /insights
+            </div>
+            <ul class="comparison-list">
+              <li data-i18n="comparison.insights.item1">Tool usage patterns</li>
+              <li data-i18n="comparison.insights.item2">Token consumption</li>
+              <li data-i18n="comparison.insights.item3">30-day HTML report</li>
+              <li data-i18n="comparison.insights.item4">Quantitative</li>
+            </ul>
           </div>
-        </div>
-        <div class="faq-item">
-          <button class="faq-question" aria-expanded="false">
-            <span data-i18n="faq.q5">Is my data safe?</span>
-            <span class="faq-icon">+</span>
-          </button>
-          <div class="faq-answer">
-            <p data-i18n="faq.a5">Logs are processed locally. Sensitive data (API keys, tokens, IPs) is automatically masked before sending to the LLM.</p>
+          <div class="comparison-card comparison-rwd">
+            <div class="comparison-label" data-i18n="comparison.rwd.label">
+              rwd
+            </div>
+            <ul class="comparison-list">
+              <li data-i18n="comparison.rwd.item1">
+                Decisions &amp; reasoning
+              </li>
+              <li data-i18n="comparison.rwd.item2">
+                Learnings &amp; corrections
+              </li>
+              <li data-i18n="comparison.rwd.item3">Daily Obsidian notes</li>
+              <li data-i18n="comparison.rwd.item4">Qualitative</li>
+            </ul>
           </div>
         </div>
       </div>
-    </div>
-  </section>
+    </section>
 
-  <!-- Footer CTA -->
-  <section class="footer-cta">
-    <div class="container">
-      <h2 class="footer-cta-title" data-i18n="cta.title">Start journaling your AI sessions.</h2>
-      <div class="hero-cta">
-        <a href="#install" class="btn btn-primary" data-i18n="cta.install">Install rwd</a>
-        <a href="https://github.com/gigagookbob/rwd" target="_blank" rel="noopener" class="btn btn-secondary"><svg class="icon" width="16" height="16" viewBox="0 0 32 32" fill="currentColor"><path fill-rule="evenodd" clip-rule="evenodd" d="M16 0C7.16 0 0 7.16 0 16C0 23.08 4.58 29.06 10.94 31.18C11.74 31.32 12.04 30.84 12.04 30.42C12.04 30.04 12.02 28.78 12.02 27.44C8 28.18 6.96 26.46 6.64 25.56C6.46 25.1 5.68 23.68 5 23.3C4.44 23 3.64 22.26 4.98 22.24C6.24 22.22 7.14 23.4 7.44 23.88C8.88 26.3 11.18 25.62 12.1 25.2C12.24 24.16 12.66 23.46 13.12 23.06C9.56 22.66 5.84 21.28 5.84 15.16C5.84 13.42 6.46 11.98 7.48 10.86C7.32 10.46 6.76 8.82 7.64 6.62C7.64 6.62 8.98 6.2 12.04 8.26C13.32 7.9 14.68 7.72 16.04 7.72C17.4 7.72 18.76 7.9 20.04 8.26C23.1 6.18 24.44 6.62 24.44 6.62C25.32 8.82 24.76 10.46 24.6 10.86C25.62 11.98 26.24 13.4 26.24 15.16C26.24 21.3 22.5 22.66 18.94 23.06C19.52 23.56 20.02 24.52 20.02 26.02C20.02 28.16 20 29.88 20 30.42C20 30.84 20.3 31.34 21.1 31.18C27.42 29.06 32 23.06 32 16C32 7.16 24.84 0 16 0Z"/></svg> <span data-i18n="cta.github">View on GitHub</span></a>
+    <div class="divider"></div>
+
+    <!-- Features -->
+    <section class="section fade-in">
+      <div class="container">
+        <h2 class="section-title" data-i18n="features.title">
+          What rwd extracts
+        </h2>
+        <div class="section-subtitle-spacer"></div>
+        <div class="features-grid">
+          <div class="feature-card">
+            <h3 class="feature-name" data-i18n="features.decisions.title">
+              Decisions
+            </h3>
+            <p class="feature-desc" data-i18n="features.decisions.desc">
+              Why you chose A over B. Captured with reasoning.
+            </p>
+          </div>
+          <div class="feature-card">
+            <h3 class="feature-name" data-i18n="features.learnings.title">
+              Learnings
+            </h3>
+            <p class="feature-desc" data-i18n="features.learnings.desc">
+              Things you were curious or confused about.
+            </p>
+          </div>
+          <div class="feature-card">
+            <h3 class="feature-name" data-i18n="features.corrections.title">
+              Corrections
+            </h3>
+            <p class="feature-desc" data-i18n="features.corrections.desc">
+              When you fixed the AI's mistakes. What went wrong and how.
+            </p>
+          </div>
+          <div class="feature-card">
+            <h3 class="feature-name" data-i18n="features.privacy.title">
+              Privacy
+            </h3>
+            <p class="feature-desc" data-i18n="features.privacy.desc">
+              Sensitive data auto-masked before LLM analysis.
+            </p>
+          </div>
+        </div>
       </div>
-    </div>
-  </section>
+    </section>
 
-  <!-- Footer -->
-  <footer class="footer">
-    <span data-i18n="footer.license">MIT License</span>
-    <span class="footer-sep">&middot;</span>
-    <span data-i18n="footer.made">Made by zerorder</span>
-  </footer>
+    <div class="divider"></div>
 
-  <script src="js/i18n.js"></script>
-  <script src="js/main.js"></script>
-</body>
+    <!-- Install -->
+    <section class="section fade-in" id="install">
+      <div class="container">
+        <h2 class="section-title" data-i18n="install.title">
+          Install in seconds
+        </h2>
+        <div class="section-subtitle-spacer"></div>
+        <div class="install-blocks">
+          <div class="install-block">
+            <div class="install-info">
+              <span class="install-platform">macOS (Apple Silicon)</span>
+              <code class="install-cmd"
+                >curl -fsSL
+                https://raw.githubusercontent.com/gigagookbob/rwd/main/install.sh
+                | sh</code
+              >
+            </div>
+            <button
+              class="copy-btn"
+              data-copy="curl -fsSL https://raw.githubusercontent.com/gigagookbob/rwd/main/install.sh | sh"
+              data-i18n="install.copy"
+            >
+              Copy
+            </button>
+          </div>
+          <div class="install-block">
+            <div class="install-info">
+              <span class="install-platform">Windows</span>
+              <code class="install-cmd"
+                >irm
+                https://raw.githubusercontent.com/gigagookbob/rwd/main/install.ps1
+                | iex</code
+              >
+            </div>
+            <button
+              class="copy-btn"
+              data-copy="irm https://raw.githubusercontent.com/gigagookbob/rwd/main/install.ps1 | iex"
+              data-i18n="install.copy"
+            >
+              Copy
+            </button>
+          </div>
+          <div class="install-block">
+            <div class="install-info">
+              <span class="install-platform" data-i18n="install.source"
+                >Build from source</span
+              >
+              <code class="install-cmd"
+                >cargo install --git
+                https://github.com/gigagookbob/rwd.git</code
+              >
+            </div>
+            <button
+              class="copy-btn"
+              data-copy="cargo install --git https://github.com/gigagookbob/rwd.git"
+              data-i18n="install.copy"
+            >
+              Copy
+            </button>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <div class="divider"></div>
+
+    <!-- Output Example -->
+    <section class="section fade-in">
+      <div class="container">
+        <h2 class="section-title" data-i18n="output.title">
+          From sessions to journal
+        </h2>
+        <p class="section-subtitle" data-i18n="output.subtitle">
+          Raw AI logs become structured daily notes.
+        </p>
+        <div class="output-split">
+          <div class="output-panel output-before">
+            <div class="output-label" data-i18n="output.before">
+              Session Logs
+            </div>
+            <div class="output-code">
+              <code>{"type":"human","text":"let's use axum instead"}</code>
+              <code>{"type":"assistant","text":"Good choice. Axum..."}</code>
+              <code>{"type":"human","text":"wait, that's wrong"}</code>
+              <code>{"type":"tool_use","name":"Edit",...}</code>
+            </div>
+          </div>
+          <div class="output-arrow">&rarr;</div>
+          <div class="output-panel output-after">
+            <div class="output-label" data-i18n="output.after">Daily Note</div>
+            <div class="output-md">
+              <div class="md-heading">## Decisions</div>
+              <div class="md-text">
+                - Chose Axum over Actix-web for its simpler middleware API
+              </div>
+              <div class="md-heading">## Corrections</div>
+              <div class="md-text">
+                - Fixed incorrect middleware setup &mdash; assistant suggested
+                outdated pattern
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <div class="divider"></div>
+
+    <!-- FAQ -->
+    <section class="section fade-in">
+      <div class="container">
+        <h2 class="section-title">FAQ</h2>
+        <div class="section-subtitle-spacer"></div>
+        <div class="faq-list">
+          <div class="faq-item">
+            <button class="faq-question" aria-expanded="false">
+              <span data-i18n="faq.q1">Which AI tools are supported?</span>
+              <span class="faq-icon">+</span>
+            </button>
+            <div class="faq-answer">
+              <p data-i18n="faq.a1">Claude Code and Codex. More coming soon.</p>
+            </div>
+          </div>
+          <div class="faq-item">
+            <button class="faq-question" aria-expanded="false">
+              <span data-i18n="faq.q2">Do I need Obsidian?</span>
+              <span class="faq-icon">+</span>
+            </button>
+            <div class="faq-answer">
+              <p data-i18n="faq.a2">
+                No. Output goes to any directory as .md files. Obsidian is
+                optional.
+              </p>
+            </div>
+          </div>
+          <div class="faq-item">
+            <button class="faq-question" aria-expanded="false">
+              <span data-i18n="faq.q3">Is it free?</span>
+              <span class="faq-icon">+</span>
+            </button>
+            <div class="faq-answer">
+              <p data-i18n="faq.a3">
+                Yes. MIT licensed, fully open source. You just need your own LLM
+                API key.
+              </p>
+            </div>
+          </div>
+          <div class="faq-item">
+            <button class="faq-question" aria-expanded="false">
+              <span data-i18n="faq.q4">What LLM providers are supported?</span>
+              <span class="faq-icon">+</span>
+            </button>
+            <div class="faq-answer">
+              <p data-i18n="faq.a4">Anthropic Claude and OpenAI.</p>
+            </div>
+          </div>
+          <div class="faq-item">
+            <button class="faq-question" aria-expanded="false">
+              <span data-i18n="faq.q5">Is my data safe?</span>
+              <span class="faq-icon">+</span>
+            </button>
+            <div class="faq-answer">
+              <p data-i18n="faq.a5">
+                Logs are processed locally. Sensitive data (API keys, tokens,
+                IPs) is automatically masked before sending to the LLM.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Footer CTA -->
+    <section class="footer-cta">
+      <div class="container">
+        <h2 class="footer-cta-title" data-i18n="cta.title">
+          Start journaling your AI sessions.
+        </h2>
+        <div class="hero-cta">
+          <a href="#install" class="btn btn-primary" data-i18n="cta.install"
+            >Install rwd</a
+          >
+          <a
+            href="https://github.com/gigagookbob/rwd"
+            target="_blank"
+            rel="noopener"
+            class="btn btn-secondary"
+            ><svg
+              class="icon"
+              width="16"
+              height="16"
+              viewBox="0 0 32 32"
+              fill="currentColor"
+            >
+              <path
+                fill-rule="evenodd"
+                clip-rule="evenodd"
+                d="M16 0C7.16 0 0 7.16 0 16C0 23.08 4.58 29.06 10.94 31.18C11.74 31.32 12.04 30.84 12.04 30.42C12.04 30.04 12.02 28.78 12.02 27.44C8 28.18 6.96 26.46 6.64 25.56C6.46 25.1 5.68 23.68 5 23.3C4.44 23 3.64 22.26 4.98 22.24C6.24 22.22 7.14 23.4 7.44 23.88C8.88 26.3 11.18 25.62 12.1 25.2C12.24 24.16 12.66 23.46 13.12 23.06C9.56 22.66 5.84 21.28 5.84 15.16C5.84 13.42 6.46 11.98 7.48 10.86C7.32 10.46 6.76 8.82 7.64 6.62C7.64 6.62 8.98 6.2 12.04 8.26C13.32 7.9 14.68 7.72 16.04 7.72C17.4 7.72 18.76 7.9 20.04 8.26C23.1 6.18 24.44 6.62 24.44 6.62C25.32 8.82 24.76 10.46 24.6 10.86C25.62 11.98 26.24 13.4 26.24 15.16C26.24 21.3 22.5 22.66 18.94 23.06C19.52 23.56 20.02 24.52 20.02 26.02C20.02 28.16 20 29.88 20 30.42C20 30.84 20.3 31.34 21.1 31.18C27.42 29.06 32 23.06 32 16C32 7.16 24.84 0 16 0Z"
+              />
+            </svg>
+            <span data-i18n="cta.github">View on GitHub</span></a
+          >
+        </div>
+      </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+      <span data-i18n="footer.license">MIT License</span>
+      <span class="footer-sep">&middot;</span>
+      <span data-i18n="footer.made">Made by zerorder</span>
+    </footer>
+
+    <script src="js/i18n.js"></script>
+    <script src="js/main.js"></script>
+  </body>
 </html>

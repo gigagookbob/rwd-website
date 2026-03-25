@@ -302,11 +302,18 @@ a {
   margin-left: 8px;
 }
 
-.terminal-body {
+pre.terminal-body {
   padding: 20px;
   font-family: var(--font-mono);
   font-size: 13px;
-  line-height: 2;
+  line-height: 1.6;
+  margin: 0;
+  white-space: pre;
+  overflow-x: auto;
+}
+
+.term-line.term-ascii {
+  line-height: 1.15;
 }
 
 .term-line {
@@ -323,8 +330,12 @@ a {
 .term-prompt { color: var(--text-secondary); }
 .term-cmd { color: var(--text-primary); }
 .term-muted { color: var(--text-muted); }
+.term-dim { color: var(--text-dim); }
 .term-text { color: var(--text-secondary); }
 .term-success { color: var(--accent-green); }
+.term-cyan { color: #06b6d4; }
+.term-blue { color: #60a5fa; }
+.term-magenta { color: #c084fc; }
 
 /* === Comparison === */
 .comparison-grid {
