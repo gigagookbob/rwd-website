@@ -277,10 +277,10 @@ a {
 }
 
 .terminal-body {
-  padding: 16px;
+  padding: 0;
 }
 
-.terminal-svg {
+.terminal-img {
   width: 100%;
   display: block;
 }
