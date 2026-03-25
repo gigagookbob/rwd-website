@@ -184,45 +184,59 @@
 
     <div class="divider"></div>
 
-    <!-- Features -->
-    <section class="section fade-in">
-      <div class="container">
-        <h2 class="section-title">
-          What rwd extracts
-        </h2>
-        <div class="section-subtitle-spacer"></div>
-        <div class="features-grid">
-          <div class="feature-card">
-            <h3 class="feature-name">
-              Decisions
-            </h3>
-            <p class="feature-desc">
-              Why you chose A over B. Captured with reasoning.
-            </p>
+    <!-- Showcase 1: Session Discovery -->
+    <section class="showcase fade-in">
+      <div class="showcase-inner">
+        <div class="showcase-text">
+          <span class="showcase-label">Session Discovery</span>
+          <h2 class="showcase-title">One command. Every session.</h2>
+          <p class="showcase-desc">
+            Run <code>rwd today</code> and it scans all your AI coding sessions automatically. Claude Code, Codex — no manual export needed.
+          </p>
+        </div>
+        <div class="mockup mockup-terminal">
+          <div class="mockup-header">
+            <div class="mockup-dots"><span></span><span></span><span></span></div>
+            <span class="mockup-title">Terminal</span>
           </div>
-          <div class="feature-card">
-            <h3 class="feature-name">
-              Learnings
-            </h3>
-            <p class="feature-desc">
-              Things you were curious or confused about.
-            </p>
+          <div class="mockup-body">
+            <div class="mockup-line"><span class="mc-dim">$</span> <span class="mc-primary">rwd today</span></div>
+            <div class="mockup-line"><span class="mc-green">⠋</span> Discovering sessions...</div>
+            <div class="mockup-line">  Found <span class="mc-primary">3</span> Claude Code sessions</div>
+            <div class="mockup-line">  Found <span class="mc-primary">1</span> Codex session</div>
+            <div class="mockup-line"><span class="mc-green">⠋</span> Planning execution...</div>
+            <div class="mockup-line">  Strategy: single-shot (<span class="mc-primary">4</span> sessions, ~12k tokens)</div>
+            <div class="mockup-line"><span class="mc-green">⠋</span> Analyzing with Claude API...</div>
           </div>
-          <div class="feature-card">
-            <h3 class="feature-name">
-              Corrections
-            </h3>
-            <p class="feature-desc">
-              When you fixed the AI's mistakes. What went wrong and how.
-            </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Showcase 2: Smart Extraction -->
+    <section class="showcase fade-in">
+      <div class="showcase-inner showcase-inner--reversed">
+        <div class="showcase-text">
+          <span class="showcase-label">Smart Extraction</span>
+          <h2 class="showcase-title">Finds what actually matters</h2>
+          <p class="showcase-desc">
+            Not a log dump. rwd identifies decisions you made, questions you had, mistakes the AI made, and things you learned.
+          </p>
+        </div>
+        <div class="mockup mockup-note">
+          <div class="mockup-header">
+            <div class="mockup-dots"><span></span><span></span><span></span></div>
+            <span class="mockup-title">2025-03-24.md</span>
           </div>
-          <div class="feature-card">
-            <h3 class="feature-name">
-              Privacy
-            </h3>
-            <p class="feature-desc">
-              Sensitive data auto-masked before LLM analysis.
-            </p>
+          <div class="mockup-body">
+            <div class="md-heading">## Key Decisions</div>
+            <div class="md-text">- <span class="mc-bold">Axum over Actix-web</span>: Simpler middleware API</div>
+            <div class="md-heading">## Curiosities</div>
+            <div class="md-text">- How does tower middleware chain work?</div>
+            <div class="md-heading">## Corrections</div>
+            <div class="md-text">- <span class="mc-muted">Model said:</span> Use .layer() for auth</div>
+            <div class="md-text">  <span class="mc-green">Fix:</span> Must wrap in ServiceBuilder first</div>
+            <div class="md-heading">## TIL</div>
+            <div class="md-text">- Tower ServiceBuilder ordering matters</div>
           </div>
         </div>
       </div>
@@ -289,48 +303,6 @@
             >
               <svg class="copy-icon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="9" y="9" width="13" height="13" rx="2" ry="2"/><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"/></svg>
             </button>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <div class="divider"></div>
-
-    <!-- Output Example -->
-    <section class="section fade-in">
-      <div class="container">
-        <h2 class="section-title">
-          From sessions to journal
-        </h2>
-        <p class="section-subtitle">
-          Raw AI logs become structured daily notes.
-        </p>
-        <div class="output-split">
-          <div class="output-panel output-before">
-            <div class="output-label">
-              Session Logs
-            </div>
-            <div class="output-code">
-              <code>{"type":"human","text":"let's use axum instead"}</code>
-              <code>{"type":"assistant","text":"Good choice. Axum..."}</code>
-              <code>{"type":"human","text":"wait, that's wrong"}</code>
-              <code>{"type":"tool_use","name":"Edit",...}</code>
-            </div>
-          </div>
-          <div class="output-arrow">&rarr;</div>
-          <div class="output-panel output-after">
-            <div class="output-label">Daily Note</div>
-            <div class="output-md">
-              <div class="md-heading">## Decisions</div>
-              <div class="md-text">
-                - Chose Axum over Actix-web for its simpler middleware API
-              </div>
-              <div class="md-heading">## Corrections</div>
-              <div class="md-text">
-                - Fixed incorrect middleware setup &mdash; assistant suggested
-                outdated pattern
-              </div>
-            </div>
           </div>
         </div>
       </div>
