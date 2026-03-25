@@ -42,6 +42,10 @@ html.i18n-loading body {
   opacity: 0;
 }
 
+.icon {
+  vertical-align: -0.125em;
+}
+
 a {
   color: inherit;
   text-decoration: none;
