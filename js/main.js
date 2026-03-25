@@ -4,11 +4,11 @@ function initClipboardCopy() {
     btn.addEventListener('click', function () {
       var text = btn.dataset.copy;
       navigator.clipboard.writeText(text).then(function () {
-        var original = btn.textContent;
-        btn.textContent = 'Copied!';
+        var original = btn.innerHTML;
+        btn.innerHTML = '<svg class="copy-icon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>';
         btn.classList.add('copied');
         setTimeout(function () {
-          btn.textContent = original;
+          btn.innerHTML = original;
           btn.classList.remove('copied');
         }, 2000);
       }).catch(function () {
