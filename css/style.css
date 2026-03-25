@@ -116,7 +116,7 @@ a {
   align-items: center;
   max-width: var(--max-width);
   margin: 0 auto;
-  padding: 14px 24px;
+  padding: 10px 24px;
 }
 
 .nav-left {
@@ -126,31 +126,26 @@ a {
 }
 
 .nav-logo {
-  font-size: 17px;
+  font-size: 22px;
   font-weight: 700;
   color: var(--text-primary);
   letter-spacing: -0.5px;
-}
-
-.nav-links {
-  display: flex;
-  gap: 20px;
-}
-
-.nav-links a {
-  font-size: 14px;
-  color: var(--text-muted);
-  transition: color 0.2s;
-}
-
-.nav-links a:hover {
-  color: var(--text-primary);
 }
 
 .nav-right {
   display: flex;
   align-items: center;
   gap: 12px;
+}
+
+.nav-link {
+  font-size: 14px;
+  color: var(--text-muted);
+  transition: color 0.2s;
+}
+
+.nav-link:hover {
+  color: var(--text-primary);
 }
 
 .nav-github-btn {
@@ -169,24 +164,22 @@ a {
 /* === Hero === */
 .hero {
   text-align: center;
-  padding: 100px 24px 60px;
+  padding: 140px 24px 80px;
 }
 
 .hero-title {
-  font-size: 42px;
+  font-size: 72px;
   font-weight: 700;
   color: var(--text-primary);
-  letter-spacing: -1.5px;
-  line-height: 1.15;
-  max-width: 560px;
+  letter-spacing: -3px;
+  line-height: 1.1;
   margin: 0 auto;
 }
 
 .hero-subtitle {
   font-size: 16px;
   color: var(--text-muted);
-  margin-top: 16px;
-  max-width: 460px;
+  margin-top: 20px;
   margin-left: auto;
   margin-right: auto;
   line-height: 1.6;
@@ -546,32 +539,83 @@ a {
 
 /* === Footer === */
 .footer {
-  text-align: center;
-  padding: 24px;
+  padding: 48px 0 32px;
   font-size: 13px;
   color: var(--text-dim);
 }
 
-.footer-sep {
-  margin: 0 8px;
+.footer-top {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+}
+
+.footer-left {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.footer-logo {
+  font-size: 15px;
+  font-weight: 700;
+  color: var(--text-secondary);
+  letter-spacing: -0.5px;
+}
+
+.footer-nav {
+  display: flex;
+  gap: 20px;
+}
+
+.footer-nav a {
+  font-size: 13px;
+  color: var(--text-dim);
+  transition: color 0.2s;
+}
+
+.footer-nav a:hover {
+  color: var(--text-secondary);
+}
+
+.footer-right {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+
+.footer-right a {
+  color: var(--text-dim);
+  transition: color 0.2s;
+}
+
+.footer-right a:hover {
+  color: var(--text-secondary);
+}
+
+.footer-divider {
+  height: 1px;
+  background: var(--border);
+  margin: 24px 0;
+}
+
+.footer-bottom {
+  color: var(--text-dim);
 }
 
 /* === Responsive === */
 @media (max-width: 640px) {
-  .nav-links {
-    display: none;
-  }
-
   .nav-github-btn span {
     display: none;
   }
 
   .hero {
-    padding: 64px 24px 40px;
+    padding: 80px 24px 48px;
   }
 
   .hero-title {
-    font-size: 30px;
+    font-size: 42px;
+    letter-spacing: -2px;
   }
 
   .hero-cta {
