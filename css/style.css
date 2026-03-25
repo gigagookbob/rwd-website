@@ -283,6 +283,10 @@ a {
 .terminal-img {
   width: 100%;
   display: block;
+  pointer-events: none;
+  user-select: none;
+  -webkit-user-select: none;
+  -webkit-user-drag: none;
 }
 
 /* === Comparison === */
