@@ -38,10 +38,18 @@ Nav → Hero → Terminal Demo → Comparison →
 - 수직 중앙 정렬 (align-items: center)
 - 섹션 간 divider (`--border` 색상)
 
+### Spacing
+
+- 쇼케이스 섹션 패딩: `80px 24px` (기존 `--section-padding` 동일)
+- 텍스트 컬럼 내부 gap: label→title `12px`, title→desc `16px`
+- 목업 body 패딩: `20px`
+- 쇼케이스 블록 경계에만 divider: Comparison↔첫 쇼케이스, 마지막 쇼케이스↔Install
+- 쇼케이스 간에는 divider 없음 (패딩으로 충분한 분리)
+
 ### Mobile (< 640px)
 
 - 단일 컬럼, 세로 스택
-- 순서: 목업 먼저 → 텍스트 아래
+- 순서: 목업 먼저 → 텍스트 아래 (모든 섹션 동일)
 - 목업 max-width: 100%
 
 ### 텍스트 컬럼 구조
@@ -67,6 +75,26 @@ Nav → Hero → Terminal Demo → Comparison →
 - 테두리: `--border`
 - border-radius: 12px
 - 기존 `.terminal` 스타일 재활용 가능
+- 목업 타이틀: dots 오른쪽에 left-aligned (기존 `.terminal-title` 패턴)
+
+### Obsidian 목업 (섹션 4) 내부 레이아웃
+
+- 사이드바: 35% / 노트 프리뷰: 65%
+- 사이드바와 프리뷰 사이 `1px solid var(--border)` 구분선
+
+### 인라인 색상 적용 방식
+
+목업 내부의 색상 강조는 `<span>` + CSS 클래스로 적용:
+
+```css
+.mc-dim     { color: var(--text-dim); }
+.mc-primary { color: var(--text-primary); }
+.mc-green   { color: var(--accent-green); }
+.mc-muted   { color: var(--text-muted); }
+.mc-bold    { color: var(--text-primary); font-weight: 600; }
+```
+
+`mc-` 접두사 = mockup color.
 
 ## Section Details
 
@@ -288,18 +316,56 @@ $ rwd slack
   .showcase-inner {
     grid-template-columns: 1fr;
   }
-  .showcase-inner--reversed .mockup {
-    order: -1; /* 목업이 항상 위에 */
+  .showcase-inner .mockup {
+    order: -1; /* 모든 섹션에서 목업이 항상 위에 */
   }
 }
 ```
+
+## HTML Removal Map
+
+삭제할 기존 블록 (현재 `index.html` 기준):
+
+| 삭제 대상 | 라인 범위 | 설명 |
+|-----------|----------|------|
+| Features divider | line 185 | `<div class="divider"></div>` |
+| Features section | lines 187–229 | "What rwd extracts" 4-card grid |
+| Features→Install divider | line 231 | `<div class="divider"></div>` |
+| Output divider | line 297 | `<div class="divider"></div>` |
+| Output Example section | lines 299–337 | "From sessions to journal" before→after |
+| Output→FAQ divider | line 339 | `<div class="divider"></div>` |
+
+## CSS Cleanup
+
+삭제 가능한 기존 CSS 클래스:
+
+| 클래스 | 이유 |
+|--------|------|
+| `.features-grid` | 쇼케이스가 대체 |
+| `.feature-card` | 쇼케이스가 대체 |
+| `.feature-name` | 쇼케이스가 대체 |
+| `.feature-desc` | 쇼케이스가 대체 |
+| `.output-split` | 쇼케이스가 대체 |
+| `.output-panel` | 쇼케이스가 대체 |
+| `.output-before` | 쇼케이스가 대체 |
+| `.output-after` | 쇼케이스가 대체 |
+| `.output-label` | 쇼케이스가 대체 |
+| `.output-code` | 쇼케이스가 대체 |
+| `.output-arrow` | 쇼케이스가 대체 |
+
+유지할 기존 CSS 클래스:
+
+| 클래스 | 이유 |
+|--------|------|
+| `.md-heading` | 섹션 2, 4 목업에서 재활용 |
+| `.md-text` | 섹션 2, 4 목업에서 재활용 |
 
 ## Files Modified
 
 | 파일 | 변경 |
 |------|------|
-| `index.html` | "What rwd extracts" + "From sessions to journal" 삭제, 6개 쇼케이스 섹션 추가 |
-| `css/style.css` | `.showcase-*`, `.mockup-*` 스타일 추가, 반응형 규칙 추가 |
+| `index.html` | 위 HTML Removal Map 블록 삭제, 6개 쇼케이스 섹션 추가 |
+| `css/style.css` | 위 CSS Cleanup 클래스 삭제, `.showcase-*`, `.mockup-*`, `.mc-*` 스타일 추가, 반응형 규칙 추가 |
 | `js/main.js` | 변경 없음 (기존 `.fade-in` 로직이 새 섹션도 처리) |
 
 ## Out of Scope
