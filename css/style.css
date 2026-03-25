@@ -357,8 +357,6 @@ a {
   display: flex;
   flex-direction: column;
   gap: 10px;
-  max-width: 560px;
-  margin: 0 auto;
 }
 
 .install-block {
