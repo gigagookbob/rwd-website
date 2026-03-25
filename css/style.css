@@ -38,6 +38,14 @@ body {
   line-height: 1.6;
 }
 
+body.i18n-loading {
+  opacity: 0;
+}
+
+body.i18n-loading * {
+  transition: none !important;
+}
+
 a {
   color: inherit;
   text-decoration: none;

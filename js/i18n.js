@@ -4,12 +4,11 @@
   var SUPPORTED = ['en', 'ko'];
 
   var translations = {};
+  var currentLang = DEFAULT_LANG;
 
-  function detectLang() {
+  function getSavedLang() {
     var saved = localStorage.getItem(STORAGE_KEY);
-    if (saved && SUPPORTED.indexOf(saved) !== -1) return saved;
-    var browser = navigator.language.slice(0, 2);
-    return SUPPORTED.indexOf(browser) !== -1 ? browser : DEFAULT_LANG;
+    return (saved && SUPPORTED.indexOf(saved) !== -1) ? saved : null;
   }
 
   function applyTranslations(lang) {
@@ -20,7 +19,6 @@
       }
     });
 
-    // Update active lang indicator
     document.querySelectorAll('.lang-option').forEach(function (opt) {
       if (opt.dataset.lang === lang) {
         opt.classList.add('active');
@@ -30,9 +28,18 @@
     });
 
     document.documentElement.lang = lang;
+    currentLang = lang;
   }
 
   function loadLang(lang) {
+    if (lang === DEFAULT_LANG) {
+      // English is already in HTML — no fetch needed
+      localStorage.setItem(STORAGE_KEY, lang);
+      applyTranslations(lang);
+      document.body.classList.remove('i18n-loading');
+      return;
+    }
+
     fetch('i18n/' + lang + '.json')
       .then(function (res) { return res.json(); })
       .then(function (data) {
@@ -41,20 +48,29 @@
         localStorage.setItem(STORAGE_KEY, lang);
       })
       .catch(function () {
-        // Fallback: keep HTML defaults (English)
+        // Fallback: keep English
+      })
+      .then(function () {
+        document.body.classList.remove('i18n-loading');
       });
   }
 
   function init() {
-    var lang = detectLang();
-    loadLang(lang);
+    var saved = getSavedLang();
 
-    // Lang toggle click handler
+    if (saved && saved !== DEFAULT_LANG) {
+      // User previously chose non-English — hide body while loading
+      document.body.classList.add('i18n-loading');
+      loadLang(saved);
+    } else {
+      // First visit or English chosen — no loading needed
+      applyTranslations(DEFAULT_LANG);
+    }
+
     var toggle = document.getElementById('langToggle');
     if (toggle) {
       toggle.addEventListener('click', function () {
-        var current = localStorage.getItem(STORAGE_KEY) || detectLang();
-        var next = current === 'en' ? 'ko' : 'en';
+        var next = currentLang === 'en' ? 'ko' : 'en';
         loadLang(next);
       });
     }
