@@ -302,18 +302,29 @@ a {
   margin-left: 8px;
 }
 
-pre.terminal-body {
+.terminal-body {
   padding: 20px;
   font-family: var(--font-mono);
   font-size: 13px;
-  line-height: 1.6;
-  margin: 0;
-  white-space: pre;
+  line-height: 1.4;
   overflow-x: auto;
 }
 
+.term-line {
+  white-space: pre;
+}
+
 .term-line.term-ascii {
-  line-height: 1.15;
+  line-height: 1.1;
+}
+
+.term-line.term-box {
+  color: var(--text-muted);
+  line-height: 1.2;
+}
+
+.term-line.term-blank {
+  line-height: 0.8;
 }
 
 .term-line {
