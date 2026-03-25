@@ -38,9 +38,6 @@ body {
   line-height: 1.6;
 }
 
-html.i18n-loading body {
-  opacity: 0;
-}
 
 .icon {
   vertical-align: -0.125em;
@@ -154,29 +151,6 @@ a {
   display: flex;
   align-items: center;
   gap: 12px;
-}
-
-.lang-toggle {
-  background: none;
-  border: none;
-  color: var(--text-dim);
-  font-size: 13px;
-  cursor: pointer;
-  font-family: var(--font-sans);
-  padding: 4px 8px;
-}
-
-.lang-toggle .lang-option {
-  transition: color 0.2s;
-}
-
-.lang-toggle .lang-option.active {
-  color: var(--text-primary);
-  font-weight: 600;
-}
-
-.lang-separator {
-  margin: 0 2px;
 }
 
 .nav-github-btn {
