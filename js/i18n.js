@@ -6,9 +6,17 @@
   var translations = {};
   var currentLang = DEFAULT_LANG;
 
+  function reveal() {
+    document.documentElement.classList.remove('i18n-loading');
+  }
+
   function getSavedLang() {
-    var saved = localStorage.getItem(STORAGE_KEY);
-    return (saved && SUPPORTED.indexOf(saved) !== -1) ? saved : null;
+    try {
+      var saved = localStorage.getItem(STORAGE_KEY);
+      return (saved && SUPPORTED.indexOf(saved) !== -1) ? saved : null;
+    } catch (e) {
+      return null;
+    }
   }
 
   function applyTranslations(lang) {
@@ -33,10 +41,9 @@
 
   function loadLang(lang) {
     if (lang === DEFAULT_LANG) {
-      // English is already in HTML — no fetch needed
       localStorage.setItem(STORAGE_KEY, lang);
       applyTranslations(lang);
-      document.body.classList.remove('i18n-loading');
+      reveal();
       return;
     }
 
@@ -47,24 +54,18 @@
         applyTranslations(lang);
         localStorage.setItem(STORAGE_KEY, lang);
       })
-      .catch(function () {
-        // Fallback: keep English
-      })
-      .then(function () {
-        document.body.classList.remove('i18n-loading');
-      });
+      .catch(function () {})
+      .then(reveal);
   }
 
   function init() {
     var saved = getSavedLang();
 
     if (saved && saved !== DEFAULT_LANG) {
-      // User previously chose non-English — hide body while loading
-      document.body.classList.add('i18n-loading');
       loadLang(saved);
     } else {
-      // First visit or English chosen — no loading needed
       applyTranslations(DEFAULT_LANG);
+      reveal();
     }
 
     var toggle = document.getElementById('langToggle');

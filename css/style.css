@@ -38,12 +38,8 @@ body {
   line-height: 1.6;
 }
 
-body.i18n-loading {
+html.i18n-loading body {
   opacity: 0;
-}
-
-body.i18n-loading * {
-  transition: none !important;
 }
 
 a {
