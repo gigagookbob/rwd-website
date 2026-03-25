@@ -40,13 +40,6 @@
   }
 
   function loadLang(lang) {
-    if (lang === DEFAULT_LANG) {
-      localStorage.setItem(STORAGE_KEY, lang);
-      applyTranslations(lang);
-      reveal();
-      return;
-    }
-
     fetch('i18n/' + lang + '.json')
       .then(function (res) { return res.json(); })
       .then(function (data) {
