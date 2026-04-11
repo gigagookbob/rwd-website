@@ -3,10 +3,10 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>rwd: Turn AI Coding Sessions into Daily Developer Notes</title>
+    <title>rwd: Daily Notes for Claude Code, Codex & Gemini CLI</title>
     <meta
       name="description"
-      content="Open-source CLI for Claude Code and Codex that turns AI coding sessions into daily developer notes, decisions, learnings, summaries, and Obsidian-ready Markdown."
+      content="Open-source CLI that turns local Claude Code, Codex, Gemini CLI, and other AI coding sessions into daily notes, standups, and a timeline of decisions, questions, and fixes."
     />
     <meta name="robots" content="index,follow,max-image-preview:large" />
     <meta name="theme-color" content="#09090b" />
@@ -16,10 +16,10 @@
     <link rel="preload" href="/assets/terminal-output.png" as="image" type="image/png" />
 
     <!-- Open Graph -->
-    <meta property="og:title" content="rwd: Turn AI Coding Sessions into Daily Developer Notes" />
+    <meta property="og:title" content="Your sessions remember more than you do." />
     <meta
       property="og:description"
-      content="Open-source CLI for Claude Code and Codex that turns AI coding sessions into daily developer notes, decisions, learnings, summaries, and Obsidian-ready Markdown."
+      content="Turn Claude Code, Codex, Gemini CLI, and other local AI coding sessions into daily notes, standups, and timelines."
     />
     <meta property="og:type" content="website" />
     <meta property="og:url" content="https://www.rewind.day/" />
@@ -29,18 +29,18 @@
     <meta property="og:image:type" content="image/png" />
     <meta property="og:image:width" content="1200" />
     <meta property="og:image:height" content="630" />
-    <meta property="og:image:alt" content="rwd open-source CLI for turning AI coding sessions into daily developer notes" />
+    <meta property="og:image:alt" content="rwd turns Claude Code, Codex, and other local AI coding sessions into daily notes and summaries" />
     <meta property="og:locale" content="en_US" />
 
     <!-- Twitter -->
     <meta name="twitter:card" content="summary_large_image" />
-    <meta name="twitter:title" content="rwd: Turn AI Coding Sessions into Daily Developer Notes" />
+    <meta name="twitter:title" content="Your sessions remember more than you do." />
     <meta
       name="twitter:description"
-      content="Open-source CLI for Claude Code and Codex that turns AI coding sessions into daily developer notes, decisions, learnings, summaries, and Obsidian-ready Markdown."
+      content="Turn Claude Code, Codex, Gemini CLI, and other local AI coding sessions into daily notes, standups, and timelines."
     />
     <meta name="twitter:image" content="https://www.rewind.day/assets/og-image.png" />
-    <meta name="twitter:image:alt" content="rwd open-source CLI for turning AI coding sessions into daily developer notes" />
+    <meta name="twitter:image:alt" content="rwd turns Claude Code, Codex, and other local AI coding sessions into daily notes and summaries" />
 
     <!-- Schema.org -->
     <script type="application/ld+json">
@@ -51,14 +51,14 @@
             "@type": "WebSite",
             "name": "rwd",
             "url": "https://www.rewind.day/",
-            "description": "Open-source CLI for Claude Code and Codex that turns AI coding sessions into daily developer notes, decisions, learnings, summaries, and Obsidian-ready Markdown."
+            "description": "Open-source CLI that turns local Claude Code, Codex, Gemini CLI, and other AI coding sessions into daily notes, standups, and timelines."
           },
           {
             "@type": "SoftwareApplication",
             "name": "rwd",
             "applicationCategory": "DeveloperApplication",
             "operatingSystem": "macOS, Windows, Linux",
-            "description": "Open-source CLI for Claude Code and Codex that turns AI coding sessions into daily developer notes, decisions, learnings, summaries, and Obsidian-ready Markdown.",
+            "description": "Open-source CLI that turns local Claude Code, Codex, Gemini CLI, and other AI coding sessions into daily notes, standups, and timelines.",
             "url": "https://www.rewind.day/",
             "image": "https://www.rewind.day/assets/og-image.png",
             "license": "https://github.com/gigagookbob/rwd/blob/main/LICENSE",
@@ -69,10 +69,11 @@
               "priceCurrency": "USD"
             },
             "featureList": [
-              "Extract decisions, learnings, and corrections from AI coding sessions",
-              "Generate daily Markdown notes for Obsidian or any folder",
-              "Create standup summaries and Slack-ready updates",
-              "Mask secrets before LLM analysis"
+              "Scan local Claude Code and Codex sessions already saved on your machine",
+              "Reconstruct a timeline of decisions, questions, confusion, and corrections",
+              "Generate daily Markdown notes, standup summaries, and Slack-ready updates",
+              "Mask secrets before LLM analysis",
+              "Designed for AI coding CLIs, with Gemini CLI on the roadmap"
             ]
           },
           {
@@ -83,7 +84,31 @@
                 "name": "Which AI tools are supported?",
                 "acceptedAnswer": {
                   "@type": "Answer",
-                  "text": "Claude Code and Codex. More coming soon."
+                  "text": "Claude Code and Codex today. Gemini CLI is on the roadmap."
+                }
+              },
+              {
+                "@type": "Question",
+                "name": "How does rwd know what I worked on?",
+                "acceptedAnswer": {
+                  "@type": "Answer",
+                  "text": "Your AI coding tools already save local sessions on your machine. rwd scans those sessions, reconstructs the day, and turns it into notes you can keep."
+                }
+              },
+              {
+                "@type": "Question",
+                "name": "Can rwd turn Claude Code or Codex sessions into daily notes?",
+                "acceptedAnswer": {
+                  "@type": "Answer",
+                  "text": "Yes. rwd scans local Claude Code and Codex sessions already stored on your machine and turns them into Markdown notes, standup summaries, and Slack-ready updates."
+                }
+              },
+              {
+                "@type": "Question",
+                "name": "Will rwd support Gemini CLI?",
+                "acceptedAnswer": {
+                  "@type": "Answer",
+                  "text": "That is the direction. rwd is designed around local session history, so Gemini CLI fits the same workflow. Today support is Claude Code and Codex, with Gemini CLI on the roadmap."
                 }
               },
               {
@@ -172,10 +197,10 @@
     <section class="hero">
       <div class="container">
         <h1 class="hero-title">
-          Turn AI coding sessions into daily developer notes.
+          Your sessions remember more than you do.
         </h1>
         <p class="hero-subtitle">
-          rwd is an open-source CLI for Claude Code and Codex that extracts decisions, learnings, corrections, and summaries, then saves them as Markdown for Obsidian or any folder.
+          rwd turns the local sessions already saved by Claude Code, Codex, and other AI coding CLIs into a daily timeline of what you did, what you decided, what confused you, and what you fixed. Gemini CLI is on the roadmap.
         </p>
         <div class="hero-cta">
           <a href="#install" class="btn btn-primary"
@@ -218,7 +243,7 @@
             <span class="terminal-title">Terminal</span>
           </div>
           <div class="terminal-body">
-            <img src="assets/terminal-output.png" alt="rwd CLI terminal output showing extracted decisions, learnings, and summaries" class="terminal-img" width="1060" height="760" loading="eager" decoding="async" fetchpriority="high" />
+            <img src="assets/terminal-output.png" alt="rwd CLI terminal output showing Claude Code and Codex sessions turned into daily notes and summaries" class="terminal-img" width="1060" height="760" loading="eager" decoding="async" fetchpriority="high" />
           </div>
         </div>
       </div>
@@ -233,7 +258,7 @@
           Not another efficiency report.
         </h2>
         <p class="section-subtitle">
-          rwd is a developer journal, not a dashboard.
+          rwd reconstructs your day from the sessions you already have.
         </p>
         <div class="comparison-grid">
           <div class="comparison-card comparison-other">
@@ -256,12 +281,46 @@
                 Decisions &amp; reasoning
               </li>
               <li>
-                Learnings &amp; corrections
+                Questions &amp; confusion
               </li>
-              <li>Daily Obsidian notes</li>
-              <li>Qualitative</li>
+              <li>Corrections &amp; learnings</li>
+              <li>Daily notes &amp; summaries</li>
             </ul>
           </div>
+        </div>
+      </div>
+    </section>
+
+    <div class="divider"></div>
+
+    <!-- Tool Support -->
+    <section class="section fade-in">
+      <div class="container">
+        <h2 class="section-title">
+          Built for AI coding CLIs
+        </h2>
+        <p class="section-subtitle">
+          Turn local Claude Code and Codex sessions into daily notes today, with Gemini CLI on the roadmap.
+        </p>
+        <div class="tool-grid">
+          <article class="tool-card">
+            <h3 class="tool-title">Claude Code session notes</h3>
+            <p class="tool-desc">
+              Reconstruct your day from local Claude Code sessions: decisions, questions, corrections, and summaries.
+            </p>
+          </article>
+          <article class="tool-card">
+            <h3 class="tool-title">Codex daily notes</h3>
+            <p class="tool-desc">
+              Turn Codex session history into Markdown notes, standup summaries, and Slack-ready updates.
+            </p>
+          </article>
+          <article class="tool-card">
+            <h3 class="tool-title">Gemini CLI support</h3>
+            <p class="tool-desc">
+              The workflow is built around local session history, so Gemini CLI fits naturally even though support is still on the roadmap.
+            </p>
+          </article>
         </div>
       </div>
     </section>
@@ -275,7 +334,7 @@
           <span class="showcase-label">Session Discovery</span>
           <h2 class="showcase-title">One command. Every session.</h2>
           <p class="showcase-desc">
-            Run <code>rwd today</code> and it scans all your AI coding sessions automatically. Claude Code, Codex — no manual export needed.
+            Run <code>rwd today</code> and it scans the local sessions already saved on your machine. Claude Code and Codex today, no manual export needed.
           </p>
         </div>
         <div class="mockup mockup-terminal">
@@ -303,7 +362,7 @@
           <span class="showcase-label">Smart Extraction</span>
           <h2 class="showcase-title">Finds what actually matters</h2>
           <p class="showcase-desc">
-            Not a log dump. rwd identifies decisions you made, questions you had, mistakes the AI made, and things you learned.
+            Not a log dump. rwd reconstructs the day: decisions you made, questions you had, parts that confused you, moments where you corrected the model, and things you learned.
           </p>
         </div>
         <div class="mockup mockup-note">
@@ -362,7 +421,7 @@
           <span class="showcase-label">Daily Notes</span>
           <h2 class="showcase-title">Lands right in your vault</h2>
           <p class="showcase-desc">
-            Structured markdown saved to your Obsidian vault or any directory. Each session becomes a documented chapter of your day.
+            Structured Markdown saved to your Obsidian vault or any directory. Each day becomes a usable record instead of a blur of sessions.
           </p>
         </div>
         <div class="mockup mockup-obsidian">
@@ -530,7 +589,46 @@
               <span class="faq-icon">+</span>
             </button>
             <div class="faq-answer">
-              <p>Claude Code and Codex. More coming soon.</p>
+              <p>Claude Code and Codex today. Gemini CLI is on the roadmap.</p>
+            </div>
+          </div>
+          <div class="faq-item">
+            <button class="faq-question" aria-expanded="false">
+              <span>How does rwd know what I worked on?</span>
+              <span class="faq-icon">+</span>
+            </button>
+            <div class="faq-answer">
+              <p>
+                Your AI coding tools already save local sessions on your machine.
+                rwd scans those sessions, reconstructs the day, and turns it into
+                notes you can keep.
+              </p>
+            </div>
+          </div>
+          <div class="faq-item">
+            <button class="faq-question" aria-expanded="false">
+              <span>Can rwd turn Claude Code or Codex sessions into daily notes?</span>
+              <span class="faq-icon">+</span>
+            </button>
+            <div class="faq-answer">
+              <p>
+                Yes. rwd scans local Claude Code and Codex sessions already
+                stored on your machine and turns them into Markdown notes,
+                standup summaries, and Slack-ready updates.
+              </p>
+            </div>
+          </div>
+          <div class="faq-item">
+            <button class="faq-question" aria-expanded="false">
+              <span>Will rwd support Gemini CLI?</span>
+              <span class="faq-icon">+</span>
+            </button>
+            <div class="faq-answer">
+              <p>
+                That is the direction. rwd is designed around local session
+                history, so Gemini CLI fits the same workflow. Today support is
+                Claude Code and Codex, with Gemini CLI on the roadmap.
+              </p>
             </div>
           </div>
           <div class="faq-item">
@@ -586,7 +684,7 @@
     <section class="footer-cta">
       <div class="container">
         <h2 class="footer-cta-title">
-          Start journaling your AI sessions.
+          Rewind your day.
         </h2>
         <div class="hero-cta">
           <a href="#install" class="btn btn-primary"

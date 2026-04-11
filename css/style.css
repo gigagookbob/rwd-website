@@ -318,6 +318,34 @@ a {
   line-height: 2;
 }
 
+/* === Tool Support === */
+.tool-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 12px;
+}
+
+.tool-card {
+  background: var(--bg-secondary);
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  padding: 24px;
+}
+
+.tool-title {
+  font-size: 18px;
+  font-weight: 600;
+  color: var(--text-primary);
+  letter-spacing: -0.3px;
+  margin-bottom: 10px;
+}
+
+.tool-desc {
+  font-size: 14px;
+  color: var(--text-muted);
+  line-height: 1.7;
+}
+
 /* === Showcase === */
 .showcase {
   padding: var(--section-padding);
@@ -727,6 +755,10 @@ a {
   }
 
   .comparison-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .tool-grid {
     grid-template-columns: 1fr;
   }
 
