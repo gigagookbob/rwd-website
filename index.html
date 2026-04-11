@@ -3,41 +3,124 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>rwd - Rewind your day</title>
+    <title>rwd: Turn AI Coding Sessions into Daily Developer Notes</title>
     <meta
       name="description"
-      content="CLI tool that extracts decisions, learnings, and corrections from AI coding sessions and saves them as daily notes."
+      content="Open-source CLI for Claude Code and Codex that turns AI coding sessions into daily developer notes, decisions, learnings, summaries, and Obsidian-ready Markdown."
     />
+    <meta name="robots" content="index,follow,max-image-preview:large" />
+    <meta name="theme-color" content="#09090b" />
+    <link rel="canonical" href="https://www.rewind.day/" />
+    <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
+    <link rel="icon" href="/favicon.ico" sizes="any" />
+    <link rel="preload" href="/assets/terminal-output.png" as="image" type="image/png" />
 
     <!-- Open Graph -->
-    <meta property="og:title" content="rwd - Rewind your day" />
+    <meta property="og:title" content="rwd: Turn AI Coding Sessions into Daily Developer Notes" />
     <meta
       property="og:description"
-      content="CLI tool that extracts decisions, learnings, and corrections from AI coding sessions and saves them as daily notes."
+      content="Open-source CLI for Claude Code and Codex that turns AI coding sessions into daily developer notes, decisions, learnings, summaries, and Obsidian-ready Markdown."
     />
     <meta property="og:type" content="website" />
-    <meta property="og:image" content="assets/og-image.png" />
+    <meta property="og:url" content="https://www.rewind.day/" />
+    <meta property="og:site_name" content="rwd" />
+    <meta property="og:image" content="https://www.rewind.day/assets/og-image.png" />
+    <meta property="og:image:secure_url" content="https://www.rewind.day/assets/og-image.png" />
+    <meta property="og:image:type" content="image/png" />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
+    <meta property="og:image:alt" content="rwd open-source CLI for turning AI coding sessions into daily developer notes" />
+    <meta property="og:locale" content="en_US" />
 
     <!-- Twitter -->
     <meta name="twitter:card" content="summary_large_image" />
-    <meta name="twitter:title" content="rwd - Rewind your day" />
+    <meta name="twitter:title" content="rwd: Turn AI Coding Sessions into Daily Developer Notes" />
     <meta
       name="twitter:description"
-      content="CLI tool that extracts decisions, learnings, and corrections from AI coding sessions and saves them as daily notes."
+      content="Open-source CLI for Claude Code and Codex that turns AI coding sessions into daily developer notes, decisions, learnings, summaries, and Obsidian-ready Markdown."
     />
+    <meta name="twitter:image" content="https://www.rewind.day/assets/og-image.png" />
+    <meta name="twitter:image:alt" content="rwd open-source CLI for turning AI coding sessions into daily developer notes" />
 
     <!-- Schema.org -->
     <script type="application/ld+json">
       {
         "@context": "https://schema.org",
-        "@type": "SoftwareApplication",
-        "name": "rwd",
-        "description": "CLI tool that extracts decisions, learnings, and corrections from AI coding sessions and saves them as daily notes.",
-        "applicationCategory": "DeveloperApplication",
-        "operatingSystem": "macOS, Windows, Linux",
-        "offers": { "@type": "Offer", "price": "0" },
-        "license": "https://opensource.org/licenses/MIT",
-        "url": "https://github.com/gigagookbob/rwd"
+        "@graph": [
+          {
+            "@type": "WebSite",
+            "name": "rwd",
+            "url": "https://www.rewind.day/",
+            "description": "Open-source CLI for Claude Code and Codex that turns AI coding sessions into daily developer notes, decisions, learnings, summaries, and Obsidian-ready Markdown."
+          },
+          {
+            "@type": "SoftwareApplication",
+            "name": "rwd",
+            "applicationCategory": "DeveloperApplication",
+            "operatingSystem": "macOS, Windows, Linux",
+            "description": "Open-source CLI for Claude Code and Codex that turns AI coding sessions into daily developer notes, decisions, learnings, summaries, and Obsidian-ready Markdown.",
+            "url": "https://www.rewind.day/",
+            "image": "https://www.rewind.day/assets/og-image.png",
+            "license": "https://github.com/gigagookbob/rwd/blob/main/LICENSE",
+            "sameAs": ["https://github.com/gigagookbob/rwd"],
+            "offers": {
+              "@type": "Offer",
+              "price": "0",
+              "priceCurrency": "USD"
+            },
+            "featureList": [
+              "Extract decisions, learnings, and corrections from AI coding sessions",
+              "Generate daily Markdown notes for Obsidian or any folder",
+              "Create standup summaries and Slack-ready updates",
+              "Mask secrets before LLM analysis"
+            ]
+          },
+          {
+            "@type": "FAQPage",
+            "mainEntity": [
+              {
+                "@type": "Question",
+                "name": "Which AI tools are supported?",
+                "acceptedAnswer": {
+                  "@type": "Answer",
+                  "text": "Claude Code and Codex. More coming soon."
+                }
+              },
+              {
+                "@type": "Question",
+                "name": "Do I need Obsidian?",
+                "acceptedAnswer": {
+                  "@type": "Answer",
+                  "text": "No. Output goes to any directory as .md files. Obsidian is optional."
+                }
+              },
+              {
+                "@type": "Question",
+                "name": "Is it free?",
+                "acceptedAnswer": {
+                  "@type": "Answer",
+                  "text": "Yes. MIT licensed, fully open source. You just need your own LLM API key."
+                }
+              },
+              {
+                "@type": "Question",
+                "name": "What LLM providers are supported?",
+                "acceptedAnswer": {
+                  "@type": "Answer",
+                  "text": "Anthropic Claude and OpenAI."
+                }
+              },
+              {
+                "@type": "Question",
+                "name": "Is my data safe?",
+                "acceptedAnswer": {
+                  "@type": "Answer",
+                  "text": "Logs are processed locally. Sensitive data such as API keys, tokens, and IPs is automatically masked before sending anything to the LLM."
+                }
+              }
+            ]
+          }
+        ]
       }
     </script>
 
@@ -45,7 +128,7 @@
   </head>
   <body>
     <!-- Nav -->
-    <nav class="nav">
+    <nav class="nav" aria-label="Primary">
       <div class="nav-inner">
         <div class="nav-left">
           <a href="/" class="nav-logo">rwd</a>
@@ -84,14 +167,15 @@
       </div>
     </nav>
 
+    <main>
     <!-- Hero -->
     <section class="hero">
       <div class="container">
         <h1 class="hero-title">
-          Rewind your day.
+          Turn AI coding sessions into daily developer notes.
         </h1>
         <p class="hero-subtitle">
-          Extracts decisions, learnings, and corrections from AI coding sessions. Saves them as daily notes.
+          rwd is an open-source CLI for Claude Code and Codex that extracts decisions, learnings, corrections, and summaries, then saves them as Markdown for Obsidian or any folder.
         </p>
         <div class="hero-cta">
           <a href="#install" class="btn btn-primary"
@@ -134,7 +218,7 @@
             <span class="terminal-title">Terminal</span>
           </div>
           <div class="terminal-body">
-            <img src="assets/terminal-output.png" alt="rwd today terminal output" class="terminal-img" />
+            <img src="assets/terminal-output.png" alt="rwd CLI terminal output showing extracted decisions, learnings, and summaries" class="terminal-img" width="1060" height="760" loading="eager" decoding="async" fetchpriority="high" />
           </div>
         </div>
       </div>
@@ -435,7 +519,7 @@
     <div class="divider"></div>
 
     <!-- FAQ -->
-    <section class="section fade-in">
+    <section class="section fade-in" id="faq">
       <div class="container">
         <h2 class="section-title">FAQ</h2>
         <div class="section-subtitle-spacer"></div>
@@ -511,6 +595,7 @@
         </div>
       </div>
     </section>
+    </main>
 
     <!-- Footer -->
     <footer class="footer">
@@ -518,7 +603,7 @@
         <div class="footer-top">
           <div class="footer-left">
             <span class="footer-logo">rwd</span>
-            <nav class="footer-nav">
+            <nav class="footer-nav" aria-label="Footer">
               <a href="https://github.com/gigagookbob/rwd#readme" target="_blank" rel="noopener">Docs</a>
               <a href="https://github.com/gigagookbob/rwd" target="_blank" rel="noopener">GitHub</a>
               <a href="https://github.com/gigagookbob/rwd/blob/main/LICENSE" target="_blank" rel="noopener">License</a>
