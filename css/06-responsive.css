@@ -1,0 +1,67 @@
+/* === Responsive === */
+@media (max-width: 640px) {
+  .nav-github-btn span {
+    display: none;
+  }
+
+  .hero {
+    padding: 80px 24px 48px;
+  }
+
+  .hero-title {
+    font-size: 42px;
+    letter-spacing: -2px;
+  }
+
+  .hero-cta {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .terminal-body {
+    font-size: 11px;
+    padding: 16px;
+  }
+
+  .comparison-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .footer-cta-title {
+    font-size: 22px;
+  }
+
+  .showcase-inner {
+    grid-template-columns: 1fr;
+  }
+
+  .showcase-inner--reversed {
+    direction: ltr;
+  }
+
+  .showcase-inner .mockup {
+    order: -1;
+  }
+
+  .showcase-title {
+    font-size: 22px;
+  }
+
+  .mockup-obsidian .mockup-body {
+    flex-direction: column;
+  }
+
+  .mockup-sidebar {
+    width: 100%;
+    border-right: none;
+    border-bottom: 1px solid var(--border);
+  }
+
+  .mockup-preview {
+    width: 100%;
+  }
+
+  .mockup-body {
+    overflow-x: auto;
+  }
+}

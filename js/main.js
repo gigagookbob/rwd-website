@@ -1,5 +1,32 @@
+// === Vercel Analytics ===
+function initAnalytics() {
+  window.va =
+    window.va ||
+    function () {
+      (window.vaq = window.vaq || []).push(arguments);
+    };
+
+  var analyticsHosts = new Set(['rewind.day', 'www.rewind.day']);
+  if (!analyticsHosts.has(window.location.hostname)) {
+    return;
+  }
+
+  if (document.querySelector('script[data-va-insights]')) {
+    return;
+  }
+
+  var script = document.createElement('script');
+  script.defer = true;
+  script.src = 'https://cdn.vercel-insights.com/v1/script.js';
+  script.setAttribute('data-va-insights', 'true');
+  document.head.appendChild(script);
+}
+
 // === Clipboard Copy ===
 function initClipboardCopy() {
+  var copySuccessIcon =
+    '<svg class="copy-icon" width="16" height="16" viewBox="0 0 24 24" aria-hidden="true"><use href="#icon-check"></use></svg>';
+
   document.querySelectorAll('.copy-btn').forEach(function (btn) {
     btn.addEventListener('click', function () {
       var text = btn.dataset.copy;
@@ -7,8 +34,7 @@ function initClipboardCopy() {
         .writeText(text)
         .then(function () {
           var original = btn.innerHTML;
-          btn.innerHTML =
-            '<svg class="copy-icon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>';
+          btn.innerHTML = copySuccessIcon;
           btn.classList.add('copied');
           setTimeout(function () {
             btn.innerHTML = original;
@@ -78,6 +104,7 @@ function initScrollFadeIn() {
 
 // === Init ===
 document.addEventListener('DOMContentLoaded', function () {
+  initAnalytics();
   initClipboardCopy();
   initFaqAccordion();
   initScrollFadeIn();

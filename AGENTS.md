@@ -21,15 +21,21 @@ vercel --prod   # production
 
 ## Architecture
 
-단일 페이지 정적 사이트. 3개 파일이 전부다:
+단일 페이지 정적 사이트. 핵심 엔트리 파일:
 
 - `index.html` — 전체 마크업 (nav, hero, terminal demo, comparison, features, install, output example, FAQ, footer)
-- `css/style.css` — CSS custom properties 기반 디자인 시스템, 반응형(640px breakpoint)
-- `js/main.js` — 클립보드 복사, FAQ 아코디언, IntersectionObserver 스크롤 fade-in
+- `css/00-tokens.css` — 디자인 토큰(`:root`)
+- `css/01-base.css` — reset/base
+- `css/02-layout.css` — container/section/divider
+- `css/03-components.css` — nav/button/terminal/comparison/install/faq/footer
+- `css/04-showcase.css` — showcase/mockup 전용
+- `css/05-utilities.css` — animation/text/spacing utilities
+- `css/06-responsive.css` — 640px 브레이크포인트 반응형
+- `js/main.js` — analytics 로더, 클립보드 복사, FAQ 아코디언, IntersectionObserver 스크롤 fade-in
 
 ## Design System
 
-CSS custom properties가 `style.css` 상단 `:root`에 정의되어 있다. 다크 테마(zinc 계열) 단일 모드.
+CSS custom properties가 `css/00-tokens.css`의 `:root`에 정의되어 있다. 다크 테마(zinc 계열) 단일 모드.
 
 - `--bg-primary: #09090b`, `--bg-secondary: #18181b` — 배경
 - `--text-primary/secondary/muted/dim` — 텍스트 계층
