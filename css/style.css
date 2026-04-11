@@ -454,14 +454,19 @@ a {
 }
 
 .mockup-terminal--session {
-  max-width: 380px;
+  max-width: 430px;
   justify-self: end;
 }
 
 .mockup-terminal--session .mockup-body {
-  padding: 24px 22px;
-  font-size: 13px;
-  line-height: 2;
+  min-height: 320px;
+  padding: 28px 24px;
+  font-size: 14px;
+  line-height: 2.05;
+}
+
+.mockup-terminal--session .mockup-line--spacer {
+  height: 10px;
 }
 
 .mockup-note .mockup-body {
