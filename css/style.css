@@ -232,7 +232,7 @@ a {
 }
 
 .terminal {
-  max-width: 680px;
+  max-width: 560px;
   margin: 0 auto;
   background: var(--bg-secondary);
   border-radius: 12px;
