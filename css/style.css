@@ -232,7 +232,7 @@ a {
 }
 
 .terminal {
-  max-width: 560px;
+  max-width: 520px;
   margin: 0 auto;
   background: var(--bg-secondary);
   border-radius: 12px;
@@ -316,34 +316,6 @@ a {
   list-style: none;
   font-size: 14px;
   line-height: 2;
-}
-
-/* === Tool Support === */
-.tool-grid {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 12px;
-}
-
-.tool-card {
-  background: var(--bg-secondary);
-  border: 1px solid var(--border);
-  border-radius: 10px;
-  padding: 24px;
-}
-
-.tool-title {
-  font-size: 18px;
-  font-weight: 600;
-  color: var(--text-primary);
-  letter-spacing: -0.3px;
-  margin-bottom: 10px;
-}
-
-.tool-desc {
-  font-size: 14px;
-  color: var(--text-muted);
-  line-height: 1.7;
 }
 
 /* === Showcase === */
@@ -451,22 +423,6 @@ a {
 /* Mockup variants */
 .mockup-terminal .mockup-line {
   white-space: pre;
-}
-
-.mockup-terminal--session {
-  max-width: 430px;
-  justify-self: end;
-}
-
-.mockup-terminal--session .mockup-body {
-  min-height: 320px;
-  padding: 28px 24px;
-  font-size: 14px;
-  line-height: 2.05;
-}
-
-.mockup-terminal--session .mockup-line--spacer {
-  height: 10px;
 }
 
 .mockup-note .mockup-body {
@@ -774,10 +730,6 @@ a {
     grid-template-columns: 1fr;
   }
 
-  .tool-grid {
-    grid-template-columns: 1fr;
-  }
-
   .footer-cta-title {
     font-size: 22px;
   }
@@ -792,11 +744,6 @@ a {
 
   .showcase-inner .mockup {
     order: -1;
-  }
-
-  .mockup-terminal--session {
-    max-width: none;
-    justify-self: stretch;
   }
 
   .showcase-title {
