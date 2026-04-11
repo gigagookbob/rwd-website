@@ -3,3 +3,4 @@
 node_modules/
 .vercel
 firebase-debug.log
+.env*.local
