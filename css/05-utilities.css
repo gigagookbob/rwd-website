@@ -1,0 +1,49 @@
+/* === Scroll Animation === */
+.fade-in {
+  opacity: 0;
+  transform: translateY(20px);
+  transition:
+    opacity 0.6s ease,
+    transform 0.6s ease;
+}
+
+.fade-in.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* === Inline Text Utilities === */
+.mc-dim {
+  color: var(--text-dim);
+}
+
+.mc-primary {
+  color: var(--text-primary);
+}
+
+.mc-green {
+  color: var(--accent-green);
+}
+
+.mc-muted {
+  color: var(--text-muted);
+}
+
+.mc-bold {
+  color: var(--text-primary);
+  font-weight: 600;
+}
+
+/* === Spacing Utilities === */
+.mockup-sep {
+  margin: 12px 0;
+  text-align: center;
+}
+
+.mockup-gap {
+  margin-top: 12px;
+}
+
+.mockup-sidebar-label {
+  margin-bottom: 4px;
+}
