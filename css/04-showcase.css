@@ -110,7 +110,7 @@
 
 /* Mockup variants */
 .mockup-terminal .mockup-line {
-  white-space: pre;
+  white-space: nowrap;
 }
 
 .mockup-note .mockup-body {
