@@ -3,10 +3,10 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>rwd: Turn AI Coding Sessions into Daily Developer Notes</title>
+    <title>rwd: Rewind AI Coding Sessions into a Daily Developer Journal</title>
     <meta
       name="description"
-      content="Open-source CLI for Claude Code and Codex that turns AI coding sessions into daily developer notes, decisions, learnings, summaries, and Obsidian-ready Markdown."
+      content="Open-source CLI for Claude Code and Codex that rewinds AI coding sessions into daily journals with key decisions, model corrections, summaries, and shareable updates."
     />
     <meta name="robots" content="index,follow,max-image-preview:large" />
     <meta name="theme-color" content="#09090b" />
@@ -16,10 +16,13 @@
     <link rel="preload" href="/assets/terminal-output.png" as="image" type="image/png" />
 
     <!-- Open Graph -->
-    <meta property="og:title" content="rwd: Turn AI Coding Sessions into Daily Developer Notes" />
+    <meta
+      property="og:title"
+      content="rwd: Rewind AI Coding Sessions into a Daily Developer Journal"
+    />
     <meta
       property="og:description"
-      content="Open-source CLI for Claude Code and Codex that turns AI coding sessions into daily developer notes, decisions, learnings, summaries, and Obsidian-ready Markdown."
+      content="Open-source CLI for Claude Code and Codex that rewinds AI coding sessions into daily journals with key decisions, model corrections, summaries, and shareable updates."
     />
     <meta property="og:type" content="website" />
     <meta property="og:url" content="https://www.rewind.day/" />
@@ -31,21 +34,24 @@
     <meta property="og:image:height" content="630" />
     <meta
       property="og:image:alt"
-      content="rwd open-source CLI for turning AI coding sessions into daily developer notes"
+      content="rwd open-source CLI for rewinding AI coding sessions into a daily developer journal"
     />
     <meta property="og:locale" content="en_US" />
 
     <!-- Twitter -->
     <meta name="twitter:card" content="summary_large_image" />
-    <meta name="twitter:title" content="rwd: Turn AI Coding Sessions into Daily Developer Notes" />
+    <meta
+      name="twitter:title"
+      content="rwd: Rewind AI Coding Sessions into a Daily Developer Journal"
+    />
     <meta
       name="twitter:description"
-      content="Open-source CLI for Claude Code and Codex that turns AI coding sessions into daily developer notes, decisions, learnings, summaries, and Obsidian-ready Markdown."
+      content="Open-source CLI for Claude Code and Codex that rewinds AI coding sessions into daily journals with key decisions, model corrections, summaries, and shareable updates."
     />
     <meta name="twitter:image" content="https://www.rewind.day/assets/og-image.png" />
     <meta
       name="twitter:image:alt"
-      content="rwd open-source CLI for turning AI coding sessions into daily developer notes"
+      content="rwd open-source CLI for rewinding AI coding sessions into a daily developer journal"
     />
 
     <!-- Schema.org -->
@@ -57,14 +63,14 @@
             "@type": "WebSite",
             "name": "rwd",
             "url": "https://www.rewind.day/",
-            "description": "Open-source CLI for Claude Code and Codex that turns AI coding sessions into daily developer notes, decisions, learnings, summaries, and Obsidian-ready Markdown."
+            "description": "Open-source CLI for Claude Code and Codex that rewinds AI coding sessions into daily journals with key decisions, model corrections, summaries, and shareable updates."
           },
           {
             "@type": "SoftwareApplication",
             "name": "rwd",
             "applicationCategory": "DeveloperApplication",
             "operatingSystem": "macOS, Windows, Linux",
-            "description": "Open-source CLI for Claude Code and Codex that turns AI coding sessions into daily developer notes, decisions, learnings, summaries, and Obsidian-ready Markdown.",
+            "description": "Open-source CLI for Claude Code and Codex that rewinds AI coding sessions into daily journals with key decisions, model corrections, summaries, and shareable updates.",
             "url": "https://www.rewind.day/",
             "image": "https://www.rewind.day/assets/og-image.png",
             "license": "https://github.com/gigagookbob/rwd/blob/main/LICENSE",
@@ -75,9 +81,10 @@
               "priceCurrency": "USD"
             },
             "featureList": [
-              "Extract decisions, learnings, and corrections from AI coding sessions",
-              "Generate daily Markdown notes for Obsidian or any folder",
-              "Create standup summaries and Slack-ready updates",
+              "Capture daily AI coding sessions across Claude Code and Codex",
+              "Extract Work Summary, Key Decisions, Questions, and Model Corrections",
+              "Save daily Markdown notes to Obsidian or any folder",
+              "Generate shareable summaries and Slack-ready updates",
               "Mask secrets before LLM analysis"
             ]
           },
@@ -89,39 +96,39 @@
                 "name": "Which AI tools are supported?",
                 "acceptedAnswer": {
                   "@type": "Answer",
-                  "text": "Claude Code and Codex. More coming soon."
+                  "text": "rwd supports Claude Code and Codex."
                 }
               },
               {
                 "@type": "Question",
-                "name": "Do I need Obsidian?",
+                "name": "Where are notes saved?",
                 "acceptedAnswer": {
                   "@type": "Answer",
-                  "text": "No. Output goes to any directory as .md files. Obsidian is optional."
+                  "text": "Output is saved as Markdown to any directory you choose. Obsidian is optional."
                 }
               },
               {
                 "@type": "Question",
-                "name": "Is it free?",
+                "name": "Can I choose output language?",
                 "acceptedAnswer": {
                   "@type": "Answer",
-                  "text": "Yes. MIT licensed, fully open source. You just need your own LLM API key."
+                  "text": "Yes. Use --lang en or --lang ko on today, summary, and slack commands."
                 }
               },
               {
                 "@type": "Question",
-                "name": "What LLM providers are supported?",
+                "name": "What do I need to run rwd?",
                 "acceptedAnswer": {
                   "@type": "Answer",
-                  "text": "Anthropic Claude and OpenAI."
+                  "text": "rwd is free and open source. You need your own API key for the configured provider."
                 }
               },
               {
                 "@type": "Question",
-                "name": "Is my data safe?",
+                "name": "Is data redacted before analysis?",
                 "acceptedAnswer": {
                   "@type": "Answer",
-                  "text": "Logs are processed locally. Sensitive data such as API keys, tokens, and IPs is automatically masked before sending anything to the LLM."
+                  "text": "Yes. Logs are processed locally, and sensitive values like API keys, bearer tokens, and private IPs are masked before LLM analysis."
                 }
               }
             ]
@@ -211,10 +218,11 @@
       <!-- Hero -->
       <section class="hero">
         <div class="container">
-          <h1 class="hero-title">Turn AI coding sessions into daily developer notes.</h1>
+          <h1 class="hero-title">Your AI coding sessions, journaled by day.</h1>
           <p class="hero-subtitle">
-            rwd is an open-source CLI for Claude Code and Codex that extracts decisions, learnings,
-            corrections, and summaries, then saves them as Markdown for Obsidian or any folder.
+            rwd is an open-source CLI for Claude Code and Codex that rewinds each session into a
+            daily journal with work summaries, key decisions, model corrections, and shareable
+            updates.
           </p>
           <div class="hero-cta">
             <a href="#install" class="btn btn-primary">Install</a>
@@ -247,7 +255,7 @@
             <div class="terminal-body">
               <img
                 src="assets/terminal-output.png"
-                alt="rwd CLI terminal output showing extracted decisions, learnings, and summaries"
+                alt="rwd CLI output showing session discovery, key decisions, and daily journal notes"
                 class="terminal-img"
                 width="1060"
                 height="760"
@@ -265,25 +273,25 @@
       <!-- Comparison -->
       <section class="section fade-in">
         <div class="container">
-          <h2 class="section-title">Not another efficiency report.</h2>
-          <p class="section-subtitle">rwd is a developer journal, not a dashboard.</p>
+          <h2 class="section-title">Metrics show activity. Journals show reasoning.</h2>
+          <p class="section-subtitle">rwd captures your thinking, not just your usage graphs.</p>
           <div class="comparison-grid">
             <div class="comparison-card comparison-other">
-              <div class="comparison-label">Claude /insights</div>
+              <div class="comparison-label">Typical usage analytics</div>
               <ul class="comparison-list">
-                <li>Tool usage patterns</li>
-                <li>Token consumption</li>
-                <li>30-day HTML report</li>
-                <li>Quantitative</li>
+                <li>Session counts and token trends</li>
+                <li>Tool usage timelines</li>
+                <li>High-level quantitative view</li>
+                <li>Limited narrative context</li>
               </ul>
             </div>
             <div class="comparison-card comparison-rwd">
-              <div class="comparison-label">rwd</div>
+              <div class="comparison-label">rwd daily journal</div>
               <ul class="comparison-list">
-                <li>Decisions &amp; reasoning</li>
-                <li>Learnings &amp; corrections</li>
-                <li>Daily Obsidian notes</li>
-                <li>Qualitative</li>
+                <li>Work Summary + Key Decisions</li>
+                <li>Questions + Model Corrections</li>
+                <li>Daily Markdown for your own archive</li>
+                <li>Shareable summary and Slack handoff</li>
               </ul>
             </div>
           </div>
@@ -292,15 +300,15 @@
 
       <div class="divider"></div>
 
-      <!-- Showcase 1: Session Discovery -->
+      <!-- Showcase 1: Session Capture -->
       <section class="showcase fade-in">
         <div class="showcase-inner">
           <div class="showcase-text">
-            <span class="showcase-label">Session Discovery</span>
-            <h2 class="showcase-title">One command. Every session.</h2>
+            <span class="showcase-label">Session Capture</span>
+            <h2 class="showcase-title">Scan the day in one command</h2>
             <p class="showcase-desc">
-              Run <code>rwd today</code> and it scans all your AI coding sessions automatically.
-              Claude Code, Codex — no manual export needed.
+              Run <code>rwd today</code> to discover sessions across Claude Code and Codex, then
+              turn the day into one structured journal entry.
             </p>
           </div>
           <div class="mockup mockup-terminal">
@@ -315,128 +323,130 @@
               </div>
               <div class="mockup-line"><span class="mc-green">⠋</span> Discovering sessions...</div>
               <div class="mockup-line">
-                Found <span class="mc-primary">3</span> Claude Code sessions
-              </div>
-              <div class="mockup-line">Found <span class="mc-primary">1</span> Codex session</div>
-              <div class="mockup-line"><span class="mc-green">⠋</span> Planning execution...</div>
-              <div class="mockup-line">
-                Strategy: single-shot (<span class="mc-primary">4</span>
-                sessions, ~12k tokens)
+                [discover] <span class="mc-primary">14</span> projects, <span class="mc-primary">82</span> log files scanned
               </div>
               <div class="mockup-line">
-                <span class="mc-green">⠋</span> Analyzing with Claude API...
+                Codex sessions: <span class="mc-primary">8</span>
+              </div>
+              <div class="mockup-line"><span class="mc-green">⠋</span> Analyzing insights...</div>
+              <div class="mockup-line">
+                ▸ Session: <span class="mc-primary">019d86xx</span>
+              </div>
+              <div class="mockup-line">Summary: release workflow was finalized...</div>
+              <div class="mockup-line">
+                Markdown saved: <span class="mc-primary">~/Daily/2026-04-13.md</span>
               </div>
             </div>
           </div>
         </div>
       </section>
 
-      <!-- Showcase 2: Smart Extraction -->
+      <!-- Showcase 2: Structured Journal -->
       <section class="showcase fade-in">
         <div class="showcase-inner showcase-inner--reversed">
           <div class="showcase-text">
-            <span class="showcase-label">Smart Extraction</span>
-            <h2 class="showcase-title">Finds what actually matters</h2>
+            <span class="showcase-label">Structured Journal</span>
+            <h2 class="showcase-title">Same outline, every single day</h2>
             <p class="showcase-desc">
-              Not a log dump. rwd identifies decisions you made, questions you had, mistakes the AI
-              made, and things you learned.
+              rwd keeps each day readable with stable sections: Work Summary, Key Decisions,
+              Questions, and Model Corrections.
             </p>
           </div>
           <div class="mockup mockup-note">
             <div class="mockup-header">
               <div class="mockup-dots"><span></span><span></span><span></span></div>
-              <span class="mockup-title">2025-03-24.md</span>
+              <span class="mockup-title">2026-04-13.md</span>
             </div>
             <div class="mockup-body">
+              <div class="md-heading">## Work Summary</div>
+              <div class="md-text">- Stabilized release flow and validated checks.</div>
               <div class="md-heading">## Key Decisions</div>
               <div class="md-text">
-                - <span class="mc-bold">Axum over Actix-web</span>: Simpler middleware API
+                - <span class="mc-bold">Root-cause fix over workaround</span>
               </div>
-              <div class="md-heading">## Curiosities</div>
-              <div class="md-text">- How does tower middleware chain work?</div>
-              <div class="md-heading">## Corrections</div>
+              <div class="md-heading">## Questions &amp; Curiosities</div>
+              <div class="md-text">- Should automated sessions be included by default?</div>
+              <div class="md-heading">## Model Corrections</div>
               <div class="md-text">
-                - <span class="mc-muted">Model said:</span> Use .layer() for auth
+                - <span class="mc-muted">Model:</span> Context7 was unavailable
               </div>
               <div class="md-text">
-                <span class="mc-green">Fix:</span> Must wrap in ServiceBuilder first
+                <span class="mc-green">Fix:</span> Retried after MCP connection
               </div>
-              <div class="md-heading">## TIL</div>
-              <div class="md-text">- Tower ServiceBuilder ordering matters</div>
             </div>
           </div>
         </div>
       </section>
 
-      <!-- Showcase 3: Privacy -->
+      <!-- Showcase 3: Corrections & Learning -->
       <section class="showcase fade-in">
         <div class="showcase-inner">
           <div class="showcase-text">
-            <span class="showcase-label">Privacy First</span>
-            <h2 class="showcase-title">Sensitive data never leaves</h2>
+            <span class="showcase-label">Corrections &amp; Learning</span>
+            <h2 class="showcase-title">Capture what changed your mind</h2>
             <p class="showcase-desc">
-              API keys, AWS credentials, GitHub tokens, private IPs — automatically masked before
-              LLM analysis. Eight patterns catch secrets you might miss.
+              rwd highlights correction loops and lessons learned, so your journal records why the
+              final solution changed.
             </p>
           </div>
           <div class="mockup mockup-code">
             <div class="mockup-header">
               <div class="mockup-dots"><span></span><span></span><span></span></div>
-              <span class="mockup-title">Redactor</span>
+              <span class="mockup-title">Model vs Fix</span>
             </div>
             <div class="mockup-body">
-              <div class="mockup-line mc-dim">export OPENAI_KEY=sk-abc123def456ghi789...</div>
-              <div class="mockup-line mc-dim">Bearer eyJhbGciOiJIUzI1NiJ9.eyJzdWI...</div>
-              <div class="mockup-line mc-dim">Server: 192.168.1.42:3000</div>
-              <div class="mockup-line mc-dim mockup-sep">↓</div>
               <div class="mockup-line">
-                export OPENAI_KEY=<span class="mc-green">[REDACTED:API_KEY]</span>
+                Model: "Local bubblewrap binary should be enough."
               </div>
               <div class="mockup-line">
-                <span class="mc-green">[REDACTED:BEARER_TOKEN]</span>
+                Fix: Set <span class="mc-green">setuid</span> on /usr/bin/bwrap.
               </div>
               <div class="mockup-line">
-                Server: <span class="mc-green">[REDACTED:PRIVATE_IP]</span>:3000
+                ---
               </div>
               <div class="mockup-line mockup-gap">
-                <span class="mc-green">✓</span> Redacted: API_KEY: 1, BEARER_TOKEN: 1, PRIVATE_IP: 1
+                TIL: PATH duplication can mimic duplicate installs.
+              </div>
+              <div class="mockup-line">
+                TIL: Existing tags can skip automated release workflows.
               </div>
             </div>
           </div>
         </div>
       </section>
 
-      <!-- Showcase 4: Daily Notes -->
+      <!-- Showcase 4: Privacy Guardrails -->
       <section class="showcase fade-in">
         <div class="showcase-inner showcase-inner--reversed">
           <div class="showcase-text">
-            <span class="showcase-label">Daily Notes</span>
-            <h2 class="showcase-title">Lands right in your vault</h2>
+            <span class="showcase-label">Privacy Guardrails</span>
+            <h2 class="showcase-title">Redaction runs before analysis</h2>
             <p class="showcase-desc">
-              Structured markdown saved to your Obsidian vault or any directory. Each session
-              becomes a documented chapter of your day.
+              Sensitive values are masked locally first, so your daily journal keeps context while
+              reducing accidental exposure.
             </p>
           </div>
           <div class="mockup mockup-obsidian">
             <div class="mockup-header">
               <div class="mockup-dots"><span></span><span></span><span></span></div>
-              <span class="mockup-title">Obsidian</span>
+              <span class="mockup-title">Redactor</span>
             </div>
             <div class="mockup-body">
               <div class="mockup-sidebar">
-                <div class="mc-muted mockup-sidebar-label">Daily</div>
-                <div class="mockup-sidebar-item mockup-sidebar-item--active">2025-03-24.md</div>
-                <div class="mockup-sidebar-item">2025-03-23.md</div>
-                <div class="mockup-sidebar-item">2025-03-22.md</div>
+                <div class="mc-muted mockup-sidebar-label">Input</div>
+                <div class="mockup-sidebar-item mockup-sidebar-item--active">OPENAI_KEY=sk-...</div>
+                <div class="mockup-sidebar-item">Bearer eyJhbGciOi...</div>
+                <div class="mockup-sidebar-item">Server: 192.168.1.42</div>
               </div>
               <div class="mockup-preview">
-                <div class="md-heading"># 2025-03-24 Dev Session Review</div>
-                <div class="md-heading">## Claude Code</div>
-                <div class="md-heading">### Work Summary</div>
-                <div class="md-text">Implemented order validation for the e-commerce API...</div>
-                <div class="md-heading">### Key Decisions</div>
+                <div class="md-heading"># Redacted Output</div>
+                <div class="md-heading">## Before LLM Analysis</div>
+                <div class="md-text">OPENAI_KEY=[REDACTED:API_KEY]</div>
+                <div class="md-text">[REDACTED:BEARER_TOKEN]</div>
+                <div class="md-text">Server: [REDACTED:PRIVATE_IP]</div>
+                <div class="md-heading">## Summary</div>
                 <div class="md-text">
-                  - <span class="mc-bold">Axum over Actix-web</span>: Simpler middleware API
+                  - <span class="mc-bold">Redacted:</span> API_KEY, BEARER_TOKEN, PRIVATE_IP
                 </div>
               </div>
             </div>
@@ -444,15 +454,15 @@
         </div>
       </section>
 
-      <!-- Showcase 5: Work Summary -->
+      <!-- Showcase 5: Daily Summary -->
       <section class="showcase fade-in">
         <div class="showcase-inner">
           <div class="showcase-text">
-            <span class="showcase-label">Work Summary</span>
-            <h2 class="showcase-title">Ready for standup</h2>
+            <span class="showcase-label">Daily Summary</span>
+            <h2 class="showcase-title">Generate a shareable day recap</h2>
             <p class="showcase-desc">
-              <code>rwd summary</code> generates a concise work report grouped by project.
-              Non-technical language, copied to clipboard — paste straight into your status update.
+              <code>rwd summary</code> condenses sessions into a clean progress report grouped by
+              topic. Good for personal logs and standup prep.
             </p>
           </div>
           <div class="mockup mockup-terminal">
@@ -463,19 +473,19 @@
             <div class="mockup-body">
               <div class="mockup-line">
                 <span class="mc-dim">$</span>
-                <span class="mc-primary">rwd summary</span>
+                <span class="mc-primary">rwd summary --lang en</span>
               </div>
               <div class="mockup-line">&nbsp;</div>
               <div class="mockup-line">
-                <span class="mc-bold">### E-commerce API</span>
+                <span class="mc-bold">=== Development Progress ===</span>
               </div>
-              <div class="mockup-line">- Order validation logic was completed</div>
-              <div class="mockup-line">- Payment webhook handling was resolved</div>
+              <div class="mockup-line"><span class="mc-bold">### Codex Environment</span></div>
+              <div class="mockup-line">- Removed recurring bubblewrap warning.</div>
               <div class="mockup-line">&nbsp;</div>
               <div class="mockup-line">
-                <span class="mc-bold">### Internal Dashboard</span>
+                <span class="mc-bold">### rwd</span>
               </div>
-              <div class="mockup-line">- User analytics chart was implemented</div>
+              <div class="mockup-line">- Completed release flow for v0.13.10.</div>
               <div class="mockup-line">&nbsp;</div>
               <div class="mockup-line"><span class="mc-green">✓</span> Copied to clipboard</div>
             </div>
@@ -483,15 +493,15 @@
         </div>
       </section>
 
-      <!-- Showcase 6: Slack Message -->
+      <!-- Showcase 6: Slack Handoff -->
       <section class="showcase fade-in">
         <div class="showcase-inner showcase-inner--reversed">
           <div class="showcase-text">
-            <span class="showcase-label">Slack Message</span>
-            <h2 class="showcase-title">Share without the jargon</h2>
+            <span class="showcase-label">Slack Handoff</span>
+            <h2 class="showcase-title">Post updates without rewriting</h2>
             <p class="showcase-desc">
-              <code>rwd slack</code> turns your technical day into a team-friendly update. No file
-              paths, no branch names — just clear outcomes ready to post.
+              <code>rwd slack</code> turns your journal into a team-ready update and copies it
+              directly to clipboard.
             </p>
           </div>
           <div class="mockup mockup-terminal">
@@ -502,15 +512,15 @@
             <div class="mockup-body">
               <div class="mockup-line">
                 <span class="mc-dim">$</span>
-                <span class="mc-primary">rwd slack</span>
+                <span class="mc-primary">rwd slack --lang en</span>
               </div>
               <div class="mockup-line">&nbsp;</div>
               <div class="mockup-line">
                 <span class="mc-bold">[Today's Work Update]</span>
               </div>
-              <div class="mockup-line">- Order validation feature was completed</div>
-              <div class="mockup-line">- Payment processing issue was identified and fixed</div>
-              <div class="mockup-line">- User analytics dashboard was implemented</div>
+              <div class="mockup-line">- Session classification flow stabilized.</div>
+              <div class="mockup-line">- Release workflow validated and completed.</div>
+              <div class="mockup-line">- Security guardrails and checks were improved.</div>
               <div class="mockup-line">&nbsp;</div>
               <div class="mockup-line"><span class="mc-green">✓</span> Copied to clipboard</div>
             </div>
@@ -594,45 +604,45 @@
                 <span class="faq-icon">+</span>
               </button>
               <div class="faq-answer">
-                <p>Claude Code and Codex. More coming soon.</p>
+                <p>rwd supports Claude Code and Codex.</p>
               </div>
             </div>
             <div class="faq-item">
               <button class="faq-question" aria-expanded="false">
-                <span>Do I need Obsidian?</span>
+                <span>Where are notes saved?</span>
                 <span class="faq-icon">+</span>
               </button>
               <div class="faq-answer">
-                <p>No. Output goes to any directory as .md files. Obsidian is optional.</p>
+                <p>Output is saved as Markdown to any directory you choose. Obsidian is optional.</p>
               </div>
             </div>
             <div class="faq-item">
               <button class="faq-question" aria-expanded="false">
-                <span>Is it free?</span>
+                <span>Can I choose output language?</span>
                 <span class="faq-icon">+</span>
               </button>
               <div class="faq-answer">
-                <p>Yes. MIT licensed, fully open source. You just need your own LLM API key.</p>
+                <p>Yes. Use <code>--lang en</code> or <code>--lang ko</code> on today, summary, and slack commands.</p>
               </div>
             </div>
             <div class="faq-item">
               <button class="faq-question" aria-expanded="false">
-                <span>What LLM providers are supported?</span>
+                <span>What do I need to run rwd?</span>
                 <span class="faq-icon">+</span>
               </button>
               <div class="faq-answer">
-                <p>Anthropic Claude and OpenAI.</p>
+                <p>rwd is MIT licensed and open source. You need your own API key for the configured provider.</p>
               </div>
             </div>
             <div class="faq-item">
               <button class="faq-question" aria-expanded="false">
-                <span>Is my data safe?</span>
+                <span>Is data redacted before analysis?</span>
                 <span class="faq-icon">+</span>
               </button>
               <div class="faq-answer">
                 <p>
-                  Logs are processed locally. Sensitive data (API keys, tokens, IPs) is
-                  automatically masked before sending to the LLM.
+                  Yes. Logs are processed locally, and sensitive values like API keys, bearer
+                  tokens, and private IPs are masked before LLM analysis.
                 </p>
               </div>
             </div>
@@ -643,7 +653,7 @@
       <!-- Footer CTA -->
       <section class="footer-cta">
         <div class="container">
-          <h2 class="footer-cta-title">Start journaling your AI sessions.</h2>
+          <h2 class="footer-cta-title">Rewind today. Keep the reasoning.</h2>
           <div class="hero-cta">
             <a href="#install" class="btn btn-primary">Install rwd</a>
           </div>
