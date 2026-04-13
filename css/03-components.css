@@ -63,7 +63,7 @@
 /* === Hero === */
 .hero {
   text-align: center;
-  padding: 140px 24px 80px;
+  padding: 80px 24px 40px;
 }
 
 .hero-title {
@@ -134,6 +134,7 @@
 
 .terminal {
   margin: 0 auto;
+  max-width: 700px;
   background: var(--bg-secondary);
   border-radius: 12px;
   border: 1px solid var(--border);
@@ -183,6 +184,7 @@
 
 .terminal-img {
   width: 100%;
+  height: auto;
   display: block;
   pointer-events: none;
   user-select: none;
