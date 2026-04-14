@@ -4,7 +4,7 @@
 
 **Goal:** Replace existing feature cards and output example sections with 6 Superset.sh-style showcase sections featuring alternating text/mockup layouts.
 
-**Architecture:** Pure HTML/CSS additions to a static site. Remove old sections (Features grid, Output Example), add 6 new `.showcase` sections with `.mockup` windows. No JS changes needed — existing IntersectionObserver handles fade-in.
+**Architecture:** Pure HTML/CSS additions to a static site. Remove old sections (Features grid, Output Example), add 6 new `.showcase` sections with `.mockup` frames. No JS changes needed — existing IntersectionObserver handles fade-in.
 
 **Tech Stack:** HTML, CSS (custom properties), no build tools.
 
@@ -549,7 +549,7 @@ Open `http://localhost:3000` in browser. Check:
 - [ ] 6 showcase sections visible between Comparison and Install
 - [ ] Odd sections (1, 3, 5): text left, mockup right
 - [ ] Even sections (2, 4, 6): mockup left, text right
-- [ ] Mockup windows have macOS chrome (dots + title)
+- [ ] Mockup frames have macOS chrome (dots + title)
 - [ ] All 6 mockups render content correctly
 - [ ] Obsidian mockup (section 4) shows sidebar + preview split
 - [ ] Colors match spec (green accents, dim/primary contrast)

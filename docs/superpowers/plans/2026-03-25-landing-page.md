@@ -865,17 +865,17 @@ git commit -m "feat: add features grid (decisions, learnings, corrections, priva
       <div class="install-blocks">
         <div class="install-block">
           <div class="install-info">
-            <span class="install-platform">macOS (Apple Silicon)</span>
+            <span class="install-platform">Linux / macOS / WSL2 (Linux shell)</span>
             <code class="install-cmd">curl -fsSL https://raw.githubusercontent.com/gigagookbob/rwd/main/install.sh | sh</code>
           </div>
           <button class="copy-btn" data-copy="curl -fsSL https://raw.githubusercontent.com/gigagookbob/rwd/main/install.sh | sh" data-i18n="install.copy">Copy</button>
         </div>
         <div class="install-block">
           <div class="install-info">
-            <span class="install-platform">Windows</span>
-            <code class="install-cmd">irm https://raw.githubusercontent.com/gigagookbob/rwd/main/install.ps1 | iex</code>
+            <span class="install-platform">WSL2 users (Linux shell)</span>
+            <code class="install-cmd">curl -fsSL https://raw.githubusercontent.com/gigagookbob/rwd/main/install.sh | sh</code>
           </div>
-          <button class="copy-btn" data-copy="irm https://raw.githubusercontent.com/gigagookbob/rwd/main/install.ps1 | iex" data-i18n="install.copy">Copy</button>
+          <button class="copy-btn" data-copy="curl -fsSL https://raw.githubusercontent.com/gigagookbob/rwd/main/install.sh | sh" data-i18n="install.copy">Copy</button>
         </div>
         <div class="install-block">
           <div class="install-info">
@@ -1669,7 +1669,7 @@ git commit -m "feat: add scroll fade-in animations with Intersection Observer"
     "name": "rwd",
     "description": "CLI tool that extracts decisions, learnings, and corrections from AI coding sessions and saves them as Obsidian Daily Notes.",
     "applicationCategory": "DeveloperApplication",
-    "operatingSystem": "macOS, Windows, Linux",
+    "operatingSystem": "macOS, Linux, WSL2 (Linux shell)",
     "offers": { "@type": "Offer", "price": "0" },
     "license": "https://opensource.org/licenses/MIT",
     "url": "https://github.com/gigagookbob/rwd"

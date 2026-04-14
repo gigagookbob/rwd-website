@@ -69,7 +69,7 @@
             "@type": "SoftwareApplication",
             "name": "rwd",
             "applicationCategory": "DeveloperApplication",
-            "operatingSystem": "macOS, Windows, Linux",
+            "operatingSystem": "macOS, Linux, WSL2 (Linux shell)",
             "description": "Open-source CLI for Claude Code and Codex that rewinds AI coding sessions into daily journals with key decisions, model corrections, summaries, and shareable updates.",
             "url": "https://www.rewind.day/",
             "image": "https://www.rewind.day/assets/og-image.png",
@@ -129,6 +129,14 @@
                 "acceptedAnswer": {
                   "@type": "Answer",
                   "text": "Yes. Logs are processed locally, and sensitive values like API keys, bearer tokens, and private IPs are masked before LLM analysis."
+                }
+              },
+              {
+                "@type": "Question",
+                "name": "Why does rwd not run directly on Windows?",
+                "acceptedAnswer": {
+                  "@type": "Answer",
+                  "text": "Native Windows is not supported. Please use WSL2. Install WSL2, open a Linux shell such as Ubuntu, and run the install.sh command."
                 }
               }
             ]
@@ -538,7 +546,7 @@
           <div class="install-blocks">
             <div class="install-block">
               <div class="install-info">
-                <span class="install-platform">macOS (Apple Silicon)</span>
+                <span class="install-platform">Linux / macOS / WSL2 (Linux shell)</span>
                 <code class="install-cmd"
                   >curl -fsSL https://raw.githubusercontent.com/gigagookbob/rwd/main/install.sh |
                   sh</code
@@ -553,40 +561,13 @@
                 </svg>
               </button>
             </div>
-            <div class="install-block">
-              <div class="install-info">
-                <span class="install-platform">Windows</span>
-                <code class="install-cmd"
-                  >irm https://raw.githubusercontent.com/gigagookbob/rwd/main/install.ps1 |
-                  iex</code
-                >
-              </div>
-              <button
-                class="copy-btn"
-                data-copy="irm https://raw.githubusercontent.com/gigagookbob/rwd/main/install.ps1 | iex"
-              >
-                <svg class="copy-icon" width="16" height="16" viewBox="0 0 24 24">
-                  <use href="#icon-copy"></use>
-                </svg>
-              </button>
-            </div>
-            <div class="install-block">
-              <div class="install-info">
-                <span class="install-platform">Build from source</span>
-                <code class="install-cmd"
-                  >cargo install --git https://github.com/gigagookbob/rwd.git</code
-                >
-              </div>
-              <button
-                class="copy-btn"
-                data-copy="cargo install --git https://github.com/gigagookbob/rwd.git"
-              >
-                <svg class="copy-icon" width="16" height="16" viewBox="0 0 24 24">
-                  <use href="#icon-copy"></use>
-                </svg>
-              </button>
-            </div>
           </div>
+          <p class="install-note">
+            Native Windows is not supported. Please use
+            <a href="https://learn.microsoft.com/en-us/windows/wsl/install" target="_blank" rel="noopener"
+              ><strong><u>WSL2</u></strong></a
+            >.
+          </p>
         </div>
       </section>
 
@@ -632,6 +613,22 @@
               </button>
               <div class="faq-answer">
                 <p>rwd is MIT licensed and open source. You need your own API key for the configured provider.</p>
+              </div>
+            </div>
+            <div class="faq-item">
+              <button class="faq-question" aria-expanded="false">
+                <span>Why does rwd not run directly on Windows?</span>
+                <span class="faq-icon">+</span>
+              </button>
+              <div class="faq-answer">
+                <p>
+                  Native Windows is not supported. Please use WSL2. Install WSL2, open a Linux
+                  shell (for example Ubuntu), then run
+                  <code
+                    >curl -fsSL https://raw.githubusercontent.com/gigagookbob/rwd/main/install.sh |
+                    sh</code
+                  >.
+                </p>
               </div>
             </div>
             <div class="faq-item">
