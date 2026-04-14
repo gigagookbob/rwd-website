@@ -109,9 +109,9 @@ rwd의 제품 소개 + 다운로드 유도를 위한 정적 랜딩 페이지. su
 ### 6. Install Guide
 
 - 섹션 헤드라인: "Install in seconds"
-- 3개 플랫폼별 설치 블록 (세로 스택):
-  - macOS (Apple Silicon): `curl -fsSL https://...install.sh | sh`
-  - Windows: `irm https://...install.ps1 | iex`
+- 설치 블록 + 안내 문구:
+  - Linux / macOS / WSL2 (Linux shell): `curl -fsSL https://...install.sh | sh`
+  - Windows 사용자는 WSL2 설치 후 Linux 셸(예: Ubuntu)에서 `install.sh` 실행
   - Build from source: `cargo install --git https://...`
 - 각 블록: 플랫폼 라벨 + monospace 명령어 + [Copy] 버튼
 - Copy 버튼: `navigator.clipboard.writeText()` 사용, 클릭 시 "Copied!" 피드백
