@@ -1,11 +1,18 @@
 /* === Responsive === */
 @media (max-width: 640px) {
+  section > .container,
+  section > .showcase-inner,
+  footer > .container {
+    margin-left: 0;
+    margin-right: 0;
+  }
+
   .nav-github-btn span {
     display: none;
   }
 
   .hero {
-    padding: 80px 24px 48px;
+    padding: 80px 0 48px;
   }
 
   .hero-title {
@@ -25,6 +32,29 @@
 
   .comparison-grid {
     grid-template-columns: 1fr;
+  }
+
+  .faq-layout {
+    grid-template-columns: 1fr;
+    gap: 24px;
+  }
+
+  .faq-title {
+    font-size: 28px;
+    letter-spacing: -0.6px;
+  }
+
+  .faq-question {
+    font-size: 13px;
+    padding: 16px 0;
+  }
+
+  .faq-answer {
+    padding-right: 0;
+  }
+
+  .install-title {
+    font-size: 22px;
   }
 
   .footer-cta-title {
