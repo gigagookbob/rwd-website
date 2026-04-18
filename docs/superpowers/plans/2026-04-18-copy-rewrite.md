@@ -472,7 +472,7 @@ Insert the following block IMMEDIATELY BEFORE that existing divider:
       <p class="maker-note-body">
         I code with Claude every day. The code ends up in git. My decisions, my corrections, the questions I was working through don't. I wanted to keep them, so I wrote rwd.
       </p>
-      <p class="maker-note-sign">Jinwoo</p>
+      <p class="maker-note-sign">gigagookbob</p>
     </div>
   </div>
 </section>
@@ -511,7 +511,7 @@ Append to the end of `css/03-components.css`:
 
 Open `index.html`. Confirm:
 - A centered italic paragraph appears between the Feature cards and the Install section.
-- A signature `Jinwoo` sits below the paragraph.
+- A signature `gigagookbob` sits below the paragraph.
 - The section respects the dark theme (light text on near-black background).
 
 - [ ] **Step 4: Commit**

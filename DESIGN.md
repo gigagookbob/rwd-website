@@ -83,8 +83,9 @@ Key characteristics:
   - Background `--bg-secondary`
   - Border `1px solid --border`
   - Radius 10-12px
-  - Header with three colored dots and dim title text
-- Terminal screenshot uses `assets/terminal-output.png` as canonical demo frame.
+  - Header with three colored dots (red/yellow/green) and dim mono title text
+- The hero terminal (`.terminal-live`) renders real `rwd today` output as live HTML (banner, summary card, progress lines, one session preview). No raster image; content is selectable text so it scales and reflows with the viewport.
+- Inside terminal/mockup bodies, authentic ANSI-inspired color mapping is allowed even outside the zinc scale: cyan `#22d3ee` (banner), bright blue `#60a5fa` (Claude Code / session headers), yellow `#facc15` (Codex / section labels), magenta `#c084fc` (analysis step), plus `--accent-red`/`--accent-green` for the `✗ / ✓` correction pair.
 
 ### Comparison Cards
 - 2-column grid desktop, single-column mobile.
@@ -107,9 +108,15 @@ Key characteristics:
 - Open state rotates plus icon by 45 degrees.
 
 ### Showcase Sections
-- Desktop: 45/55 text/mockup split (`.showcase-inner`).
-- Alternating layout uses `.showcase-inner--reversed` with `direction: rtl` technique.
-- Includes terminal-like, note-like, code-like, and Obsidian-like mockup variants.
+- Four alternating sections: Capture, Rewind, Redact, Share. Each section has a short eyebrow label (`01 · Capture` …), a 30px title, 1–2 fragment desc, and a distinct mockup artifact on the opposite side.
+- Desktop: 45/55 text/mockup split (`.showcase-inner`, `grid-template-columns: 45fr 55fr`, 64px gap).
+- Alternating layout uses `.showcase-inner--reversed` with the `direction: rtl` flip trick. On mobile the layout stacks and the mockup always sits above the text regardless of direction.
+- Section rhythm is `96px 0` on desktop, `64px 0` on mobile.
+- Mockup variants (all share `.mockup` chrome):
+  - `.mockup-progress` — mono terminal of `rwd today` analysis steps (Block 1, Capture). Real session IDs, magenta for "Analyzing…", green `✓` for done steps.
+  - `.mockup-note` — rendered Markdown daily note (Block 2, Rewind). Mock title, `## Session:` heading in bright blue, uppercase `H3` labels, bullet lists, and a red/green Model/Fix correction pair. Fades out at the bottom via a secondary-background linear-gradient to imply there is more content below.
+  - `.mockup-diff` — side-by-side Redact view (Block 3). Left column tinted red `rgba(239,68,68,0.04)` with `.diff-secret` strikethrough; right column tinted green `rgba(34,197,94,0.04)` with `.diff-mask` tokens like `[REDACTED:API_KEY]`.
+  - `.mockup-chat` — Slack-style post (Block 4, Share). Channel header, rounded gradient avatar, message body with parenthesized category tags and a bottom-bar `Copied to clipboard` confirmation in `--accent-green`.
 
 ### Footer
 - Top CTA strip with border-top and centered call-to-action.
@@ -129,9 +136,9 @@ Key characteristics:
 - Major sections separated with 1px divider line using `--border`.
 
 ### Grid Usage
-- Comparison: `grid-template-columns: 1fr 1fr`.
-- Showcase: `grid-template-columns: 45fr 55fr`.
-- Obsidian mockup split: sidebar 35% / preview 65%.
+- Showcase: `grid-template-columns: 45fr 55fr`, 64px gap.
+- Redact diff: `grid-template-columns: 1fr 1fr` inside `.mockup-diff .mockup-body` (stacks to `1fr` on mobile).
+- Summary card (hero): single column of bordered agent rows with a date head strip.
 
 ### Spacing Behavior
 - Frequent spacing values: 4, 6, 8, 10, 12, 16, 20, 24, 32, 40, 48, 80.
@@ -175,12 +182,14 @@ Primary breakpoint: `max-width: 640px`
 Behavior at mobile:
 - Hide GitHub button text label in nav (`.nav-github-btn span`).
 - Hero title scales to 42px and CTA stack becomes vertical.
-- Comparison grid collapses to one column.
-- Showcase grid collapses to one column; mockup appears above text.
-- Reversed showcase resets to normal reading order.
-- Obsidian mockup switches sidebar/preview split to vertical.
+- Hero terminal: banner ASCII drops to 8px, summary card expands to fill width, meta rows tighten.
+- Showcase grid collapses to one column; the mockup always sits above the text (via `order`) regardless of desktop direction.
+- Showcase title scales to 24px; section rhythm to `64px 0`.
+- Redact diff stacks raw → masked vertically with a horizontal border between them.
+- Chat mockup avatar shrinks 40→32px.
+- Note mockup reduces padding and lowers `max-height` to 440px so the fade-out stays visible.
+- Mockup content allows horizontal scroll where needed (the terminal body has `overflow-x: auto`).
 - Footer CTA title scales down to 22px.
-- Mockup content allows horizontal scroll where needed.
 
 Touch and readability:
 - Keep interactive controls at current comfortable sizes (buttons and FAQ rows).
