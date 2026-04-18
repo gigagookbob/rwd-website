@@ -2,11 +2,18 @@
 .container {
   max-width: var(--max-width);
   margin: 0 auto;
-  padding: 0 24px;
+  padding: 0;
 }
 
 .section {
   padding: var(--section-padding);
+}
+
+section > .container,
+section > .showcase-inner,
+footer > .container {
+  margin-left: 320px;
+  margin-right: 320px;
 }
 
 .section-title {

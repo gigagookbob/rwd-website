@@ -50,13 +50,14 @@ Key characteristics:
 |---|---:|---:|---:|---:|---|
 | Hero Title (`.hero-title`) | 72px | 700 | 1.1 | -3px | `--text-primary` |
 | Hero Title Mobile | 42px | 700 | 1.1 | -2px | `--text-primary` |
-| Footer CTA Title (`.footer-cta-title`) | 28px | 600 | default | -0.5px | `--text-primary` |
+| Footer CTA Title (`.footer-cta-title`) | 32px | 600 | default | -0.5px | `--text-primary` |
+| Install Title (`.install-title`) | 32px | 600 | default | -0.5px | `--text-primary` |
 | Showcase Title (`.showcase-title`) | 28px | 700 | 1.2 | -0.5px | `--text-primary` |
 | Section Title (`.section-title`) | 24px | 600 | default | -0.5px | `--text-primary` |
 | Nav Logo (`.nav-logo`) | 22px | 700 | default | -0.5px | `--text-primary` |
 | Body Large (`.hero-subtitle`) | 16px | 400 | 1.6 | normal | `--text-muted` |
 | Body (`body`, `.showcase-desc`) | 15-16px | 400 | 1.6 | normal | `--text-secondary` |
-| UI Text (`.btn`, `.faq-question`) | 14-15px | 600/400 | ~1.4-1.6 | normal | token-based |
+| UI Text (`.btn`, `.faq-question`) | 13-14px | 600 | ~1.35-1.6 | slight tracking on FAQ | token-based |
 | Small Labels (`.comparison-label`, `.install-platform`) | 12px | 400 | default | 1px uppercase (where used) | `--text-muted` |
 | Mono Command (`.install-cmd`, `.mockup-body`) | 12-13px | 400 | 1.6-1.8 | normal | `--text-secondary` |
 
@@ -69,7 +70,7 @@ Key characteristics:
 
 ### Navigation
 - Sticky top navigation with blur backdrop and bottom border.
-- `max-width: 960px` container with `10px 24px` inner spacing.
+- Full-width container (no max-width cap) with `10px 0` inner spacing and `320px` horizontal margin.
 - Right side contains docs link and GitHub button; button uses bordered ghost style.
 
 ### Buttons
@@ -99,7 +100,9 @@ Key characteristics:
   - Copied: green border/text (`.copy-btn.copied`)
 
 ### FAQ
-- Top/bottom border list with accordion interaction.
+- Two-column layout on desktop: left title block and right border-line accordion list.
+- Desktop ratio: title column `240-320px`, list column up to `760px`.
+- List rows use subtle low-contrast divider lines for a minimal terminal-like feel.
 - Clicking one item opens it and closes others.
 - Open state rotates plus icon by 45 degrees.
 
@@ -115,13 +118,14 @@ Key characteristics:
 ## 5. Layout Principles
 
 ### Containers & Width
-- Global content container max width: `960px`.
-- Horizontal page padding baseline: `24px`.
+- Global content container max width: none (full-width layout).
+- Horizontal page padding baseline: `0px`.
+- Direct page wrappers (`section > .container`, `section > .showcase-inner`, `footer > .container`) use `320px` horizontal margins.
 
 ### Section Rhythm
-- Default section padding: `80px 24px`.
-- Hero: `80px 24px 40px`.
-- Terminal section: `0 24px 80px`.
+- Default section padding: `80px 0`.
+- Hero: `80px 0 40px`.
+- Terminal section: `160px 0 80px`.
 - Major sections separated with 1px divider line using `--border`.
 
 ### Grid Usage
