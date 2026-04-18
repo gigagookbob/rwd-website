@@ -398,6 +398,12 @@
   font-weight: 600;
   color: var(--text-primary);
   letter-spacing: -0.5px;
+  margin-bottom: 8px;
+}
+
+.footer-cta-sub {
+  font-size: 15px;
+  color: var(--text-muted);
   margin-bottom: 24px;
 }
 
