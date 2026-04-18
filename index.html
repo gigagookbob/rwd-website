@@ -358,66 +358,47 @@
           <div class="faq-list">
             <div class="faq-item">
               <button class="faq-question" aria-expanded="false">
-                <span>Which AI tools are supported?</span>
+                <span>Which AI agents does rwd read?</span>
                 <span class="faq-icon">+</span>
               </button>
               <div class="faq-answer">
-                <p>rwd supports Claude Code and Codex.</p>
+                <p>Claude Code and Codex today. More CLIs on the way.</p>
               </div>
             </div>
             <div class="faq-item">
               <button class="faq-question" aria-expanded="false">
-                <span>Where are notes saved?</span>
+                <span>Where do the notes go?</span>
                 <span class="faq-icon">+</span>
               </button>
               <div class="faq-answer">
-                <p>Output is saved as Markdown to any directory you choose. Obsidian is optional.</p>
+                <p>Any folder you choose, as Markdown. Works well with Obsidian but doesn't require it.</p>
               </div>
             </div>
             <div class="faq-item">
               <button class="faq-question" aria-expanded="false">
-                <span>Can I choose output language?</span>
+                <span>English or Korean output?</span>
                 <span class="faq-icon">+</span>
               </button>
               <div class="faq-answer">
-                <p>Yes. Use <code>--lang en</code> or <code>--lang ko</code> on today, summary, and slack commands.</p>
+                <p>Both. Add <code>--lang en</code> or <code>--lang ko</code> to <code>today</code>, <code>summary</code>, or <code>slack</code>.</p>
               </div>
             </div>
             <div class="faq-item">
               <button class="faq-question" aria-expanded="false">
-                <span>What do I need to run rwd?</span>
+                <span>What does it cost?</span>
                 <span class="faq-icon">+</span>
               </button>
               <div class="faq-answer">
-                <p>rwd is MIT licensed and open source. You need your own API key for the configured provider.</p>
+                <p>rwd is free and MIT licensed. You bring your own API key for whichever model it uses.</p>
               </div>
             </div>
             <div class="faq-item">
               <button class="faq-question" aria-expanded="false">
-                <span>Why does rwd not run directly on Windows?</span>
+                <span>Is my data sent raw to the model?</span>
                 <span class="faq-icon">+</span>
               </button>
               <div class="faq-answer">
-                <p>
-                  Native Windows is not supported. Please use WSL2. Install WSL2, open a Linux
-                  shell (for example Ubuntu), then run
-                  <code
-                    >curl -fsSL https://raw.githubusercontent.com/gigagookbob/rwd/main/install.sh |
-                    sh</code
-                  >.
-                </p>
-              </div>
-            </div>
-            <div class="faq-item">
-              <button class="faq-question" aria-expanded="false">
-                <span>Is data redacted before analysis?</span>
-                <span class="faq-icon">+</span>
-              </button>
-              <div class="faq-answer">
-                <p>
-                  Yes. Logs are processed locally, and sensitive values like API keys, bearer
-                  tokens, and private IPs are masked before LLM analysis.
-                </p>
+                <p>No. API keys, bearer tokens, and private IPs are masked locally before anything is sent.</p>
               </div>
             </div>
           </div>
