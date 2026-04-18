@@ -43,6 +43,14 @@ CSS custom properties가 `css/00-tokens.css`의 `:root`에 정의되어 있다. 
 - `--max-width: 960px` — 컨테이너 최대 폭
 - 폰트: system sans-serif + monospace (SF Mono, Fira Code 등)
 
+## DESIGN.md Workflow
+
+이 저장소는 `awesome-design-md` 스타일 워크플로우를 도입했다.
+
+- 루트의 `DESIGN.md`를 디자인 규칙의 단일 소스로 사용한다.
+- UI/스타일 변경 전에는 `DESIGN.md` + `css/00-tokens.css`를 먼저 확인한다.
+- 시각 규칙(토큰, 타이포 스케일, 컴포넌트 상태, 반응형 동작)을 바꾸면 `DESIGN.md`를 같은 변경에서 함께 업데이트한다.
+
 ## Deployment
 
 Vercel 정적 배포. `vercel.json`에 `css/`, `js/`, `assets/` 경로에 대해 1년 immutable 캐시 헤더가 설정되어 있다.
