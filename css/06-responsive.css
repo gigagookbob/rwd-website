@@ -8,7 +8,7 @@
 @media (max-width: 768px) {
   .showcase-inner,
   .showcase-inner--reversed {
-    grid-template-columns: 1fr;
+    grid-template-columns: minmax(0, 1fr);
     gap: 28px;
     direction: ltr;
   }
@@ -87,7 +87,7 @@
   }
 
   .diff-cols {
-    grid-template-columns: 1fr;
+    grid-template-columns: minmax(0, 1fr);
   }
 
   .diff-col {
