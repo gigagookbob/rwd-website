@@ -1,7 +1,6 @@
 /* === Responsive === */
 @media (max-width: 640px) {
   section > .container,
-  section > .showcase-inner,
   footer > .container {
     margin-left: 0;
     margin-right: 0;
@@ -30,7 +29,7 @@
     padding: 16px;
   }
 
-  .comparison-grid {
+  .feature-grid {
     grid-template-columns: 1fr;
   }
 
@@ -59,39 +58,5 @@
 
   .footer-cta-title {
     font-size: 22px;
-  }
-
-  .showcase-inner {
-    grid-template-columns: 1fr;
-  }
-
-  .showcase-inner--reversed {
-    direction: ltr;
-  }
-
-  .showcase-inner .mockup {
-    order: -1;
-  }
-
-  .showcase-title {
-    font-size: 22px;
-  }
-
-  .mockup-obsidian .mockup-body {
-    flex-direction: column;
-  }
-
-  .mockup-sidebar {
-    width: 100%;
-    border-right: none;
-    border-bottom: 1px solid var(--border);
-  }
-
-  .mockup-preview {
-    width: 100%;
-  }
-
-  .mockup-body {
-    overflow-x: auto;
   }
 }
