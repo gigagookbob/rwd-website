@@ -63,14 +63,14 @@
             "@type": "WebSite",
             "name": "rwd",
             "url": "https://www.rewind.day/",
-            "description": "Open-source CLI for Claude Code and Codex that rewinds AI coding sessions into daily journals with key decisions, model corrections, summaries, and shareable updates."
+            "description": "Open-source CLI for AI agents like Claude Code and Codex. Turns your coding day into one daily note of decisions, questions, and corrections."
           },
           {
             "@type": "SoftwareApplication",
             "name": "rwd",
             "applicationCategory": "DeveloperApplication",
             "operatingSystem": "macOS, Linux, WSL2 (Linux shell)",
-            "description": "Open-source CLI for Claude Code and Codex that rewinds AI coding sessions into daily journals with key decisions, model corrections, summaries, and shareable updates.",
+            "description": "Open-source CLI for AI agents like Claude Code and Codex. Turns your coding day into one daily note of decisions, questions, and corrections.",
             "url": "https://www.rewind.day/",
             "image": "https://www.rewind.day/assets/og-image.png",
             "license": "https://github.com/gigagookbob/rwd/blob/main/LICENSE",
@@ -81,11 +81,10 @@
               "priceCurrency": "USD"
             },
             "featureList": [
-              "Capture daily AI coding sessions across Claude Code and Codex",
-              "Extract Work Summary, Key Decisions, Questions, and Model Corrections",
-              "Save daily Markdown notes to Obsidian or any folder",
-              "Generate shareable summaries and Slack-ready updates",
-              "Mask secrets before LLM analysis"
+              "Capture sessions from Claude Code and Codex automatically",
+              "Keep decisions, questions, and corrections in a daily Markdown note",
+              "Mask API keys, tokens, and private IPs locally before analysis",
+              "Generate shareable summaries and Slack-ready posts"
             ]
           },
           {
@@ -93,50 +92,42 @@
             "mainEntity": [
               {
                 "@type": "Question",
-                "name": "Which AI tools are supported?",
+                "name": "Which AI agents does rwd read?",
                 "acceptedAnswer": {
                   "@type": "Answer",
-                  "text": "rwd supports Claude Code and Codex."
+                  "text": "Claude Code and Codex today. More CLIs on the way."
                 }
               },
               {
                 "@type": "Question",
-                "name": "Where are notes saved?",
+                "name": "Where do the notes go?",
                 "acceptedAnswer": {
                   "@type": "Answer",
-                  "text": "Output is saved as Markdown to any directory you choose. Obsidian is optional."
+                  "text": "Any folder you choose, as Markdown. Works well with Obsidian but doesn't require it."
                 }
               },
               {
                 "@type": "Question",
-                "name": "Can I choose output language?",
+                "name": "English or Korean output?",
                 "acceptedAnswer": {
                   "@type": "Answer",
-                  "text": "Yes. Use --lang en or --lang ko on today, summary, and slack commands."
+                  "text": "Both. Add --lang en or --lang ko to today, summary, or slack."
                 }
               },
               {
                 "@type": "Question",
-                "name": "What do I need to run rwd?",
+                "name": "What does it cost?",
                 "acceptedAnswer": {
                   "@type": "Answer",
-                  "text": "rwd is free and open source. You need your own API key for the configured provider."
+                  "text": "rwd is free and MIT licensed. You bring your own API key for whichever model it uses."
                 }
               },
               {
                 "@type": "Question",
-                "name": "Is data redacted before analysis?",
+                "name": "Is my data sent raw to the model?",
                 "acceptedAnswer": {
                   "@type": "Answer",
-                  "text": "Yes. Logs are processed locally, and sensitive values like API keys, bearer tokens, and private IPs are masked before LLM analysis."
-                }
-              },
-              {
-                "@type": "Question",
-                "name": "Why does rwd not run directly on Windows?",
-                "acceptedAnswer": {
-                  "@type": "Answer",
-                  "text": "Native Windows is not supported. Please use WSL2. Install WSL2, open a Linux shell such as Ubuntu, and run the install.sh command."
+                  "text": "No. API keys, bearer tokens, and private IPs are masked locally before anything is sent."
                 }
               }
             ]
