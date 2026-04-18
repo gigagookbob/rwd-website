@@ -3,10 +3,10 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>rwd: Rewind AI Coding Sessions into a Daily Developer Journal</title>
+    <title>rwd: Rewind your day. Daily notes for Claude Code, Codex, and other AI agents.</title>
     <meta
       name="description"
-      content="Open-source CLI for Claude Code and Codex that rewinds AI coding sessions into daily journals with key decisions, model corrections, summaries, and shareable updates."
+      content="Open-source CLI for AI agents like Claude Code and Codex. Turns your coding day into one daily note of decisions, questions, and corrections."
     />
     <meta name="robots" content="index,follow,max-image-preview:large" />
     <meta name="theme-color" content="#09090b" />
@@ -18,11 +18,11 @@
     <!-- Open Graph -->
     <meta
       property="og:title"
-      content="rwd: Rewind AI Coding Sessions into a Daily Developer Journal"
+      content="rwd: Rewind your day. Daily notes for Claude Code, Codex, and other AI agents."
     />
     <meta
       property="og:description"
-      content="Open-source CLI for Claude Code and Codex that rewinds AI coding sessions into daily journals with key decisions, model corrections, summaries, and shareable updates."
+      content="Open-source CLI for AI agents like Claude Code and Codex. Turns your coding day into one daily note of decisions, questions, and corrections."
     />
     <meta property="og:type" content="website" />
     <meta property="og:url" content="https://www.rewind.day/" />
@@ -34,7 +34,7 @@
     <meta property="og:image:height" content="630" />
     <meta
       property="og:image:alt"
-      content="rwd open-source CLI for rewinding AI coding sessions into a daily developer journal"
+      content="rwd, an open-source CLI that turns your AI agent sessions into a daily note."
     />
     <meta property="og:locale" content="en_US" />
 
@@ -42,16 +42,16 @@
     <meta name="twitter:card" content="summary_large_image" />
     <meta
       name="twitter:title"
-      content="rwd: Rewind AI Coding Sessions into a Daily Developer Journal"
+      content="rwd: Rewind your day. Daily notes for Claude Code, Codex, and other AI agents."
     />
     <meta
       name="twitter:description"
-      content="Open-source CLI for Claude Code and Codex that rewinds AI coding sessions into daily journals with key decisions, model corrections, summaries, and shareable updates."
+      content="Open-source CLI for AI agents like Claude Code and Codex. Turns your coding day into one daily note of decisions, questions, and corrections."
     />
     <meta name="twitter:image" content="https://www.rewind.day/assets/og-image.png" />
     <meta
       name="twitter:image:alt"
-      content="rwd open-source CLI for rewinding AI coding sessions into a daily developer journal"
+      content="rwd, an open-source CLI that turns your AI agent sessions into a daily note."
     />
 
     <!-- Schema.org -->
@@ -63,14 +63,14 @@
             "@type": "WebSite",
             "name": "rwd",
             "url": "https://www.rewind.day/",
-            "description": "Open-source CLI for Claude Code and Codex that rewinds AI coding sessions into daily journals with key decisions, model corrections, summaries, and shareable updates."
+            "description": "Open-source CLI for AI agents like Claude Code and Codex. Turns your coding day into one daily note of decisions, questions, and corrections."
           },
           {
             "@type": "SoftwareApplication",
             "name": "rwd",
             "applicationCategory": "DeveloperApplication",
             "operatingSystem": "macOS, Linux, WSL2 (Linux shell)",
-            "description": "Open-source CLI for Claude Code and Codex that rewinds AI coding sessions into daily journals with key decisions, model corrections, summaries, and shareable updates.",
+            "description": "Open-source CLI for AI agents like Claude Code and Codex. Turns your coding day into one daily note of decisions, questions, and corrections.",
             "url": "https://www.rewind.day/",
             "image": "https://www.rewind.day/assets/og-image.png",
             "license": "https://github.com/gigagookbob/rwd/blob/main/LICENSE",
@@ -81,11 +81,10 @@
               "priceCurrency": "USD"
             },
             "featureList": [
-              "Capture daily AI coding sessions across Claude Code and Codex",
-              "Extract Work Summary, Key Decisions, Questions, and Model Corrections",
-              "Save daily Markdown notes to Obsidian or any folder",
-              "Generate shareable summaries and Slack-ready updates",
-              "Mask secrets before LLM analysis"
+              "Capture sessions from Claude Code and Codex automatically",
+              "Keep decisions, questions, and corrections in a daily Markdown note",
+              "Mask API keys, tokens, and private IPs locally before analysis",
+              "Generate shareable summaries and Slack-ready posts"
             ]
           },
           {
@@ -93,50 +92,42 @@
             "mainEntity": [
               {
                 "@type": "Question",
-                "name": "Which AI tools are supported?",
+                "name": "Which AI agents does rwd read?",
                 "acceptedAnswer": {
                   "@type": "Answer",
-                  "text": "rwd supports Claude Code and Codex."
+                  "text": "Claude Code and Codex today. More CLIs on the way."
                 }
               },
               {
                 "@type": "Question",
-                "name": "Where are notes saved?",
+                "name": "Where do the notes go?",
                 "acceptedAnswer": {
                   "@type": "Answer",
-                  "text": "Output is saved as Markdown to any directory you choose. Obsidian is optional."
+                  "text": "Any folder you choose, as Markdown. Works well with Obsidian but doesn't require it."
                 }
               },
               {
                 "@type": "Question",
-                "name": "Can I choose output language?",
+                "name": "English or Korean output?",
                 "acceptedAnswer": {
                   "@type": "Answer",
-                  "text": "Yes. Use --lang en or --lang ko on today, summary, and slack commands."
+                  "text": "Both. Add --lang en or --lang ko to today, summary, or slack."
                 }
               },
               {
                 "@type": "Question",
-                "name": "What do I need to run rwd?",
+                "name": "What does it cost?",
                 "acceptedAnswer": {
                   "@type": "Answer",
-                  "text": "rwd is free and open source. You need your own API key for the configured provider."
+                  "text": "rwd is free and MIT licensed. You bring your own API key for whichever model it uses."
                 }
               },
               {
                 "@type": "Question",
-                "name": "Is data redacted before analysis?",
+                "name": "Is my data sent raw to the model?",
                 "acceptedAnswer": {
                   "@type": "Answer",
-                  "text": "Yes. Logs are processed locally, and sensitive values like API keys, bearer tokens, and private IPs are masked before LLM analysis."
-                }
-              },
-              {
-                "@type": "Question",
-                "name": "Why does rwd not run directly on Windows?",
-                "acceptedAnswer": {
-                  "@type": "Answer",
-                  "text": "Native Windows is not supported. Please use WSL2. Install WSL2, open a Linux shell such as Ubuntu, and run the install.sh command."
+                  "text": "No. API keys, bearer tokens, and private IPs are masked locally before anything is sent."
                 }
               }
             ]
@@ -149,7 +140,6 @@
     <link rel="stylesheet" href="css/01-base.css?v=3" />
     <link rel="stylesheet" href="css/02-layout.css?v=3" />
     <link rel="stylesheet" href="css/03-components.css?v=3" />
-    <link rel="stylesheet" href="css/04-showcase.css?v=3" />
     <link rel="stylesheet" href="css/05-utilities.css?v=3" />
     <link rel="stylesheet" href="css/06-responsive.css?v=3" />
   </head>
@@ -226,14 +216,12 @@
       <!-- Hero -->
       <section class="hero">
         <div class="container">
-          <h1 class="hero-title">Your AI coding sessions, journaled by day.</h1>
+          <h1 class="hero-title">Rewind your day.</h1>
           <p class="hero-subtitle">
-            rwd is an open-source CLI for Claude Code and Codex that rewinds each session into a
-            daily journal with work summaries, key decisions, model corrections, and shareable
-            updates.
+            Decisions. Questions. Corrections. Everything you worked out with your AI agents today, stitched into one daily note.
           </p>
           <div class="hero-cta">
-            <a href="#install" class="btn btn-primary">Install</a>
+            <a href="#install" class="btn btn-primary">Install rwd</a>
             <a
               href="https://github.com/gigagookbob/rwd"
               target="_blank"
@@ -263,7 +251,7 @@
             <div class="terminal-body">
               <img
                 src="assets/terminal-output.png"
-                alt="rwd CLI output showing session discovery, key decisions, and daily journal notes"
+                alt="rwd CLI output showing session discovery, decisions, and a daily note"
                 class="terminal-img"
                 width="1060"
                 height="760"
@@ -278,260 +266,49 @@
 
       <div class="divider"></div>
 
-      <!-- Comparison -->
+      <!-- Feature cards -->
       <section class="section fade-in">
         <div class="container">
-          <h2 class="section-title install-title">Metrics show activity. Journals show reasoning.</h2>
-          <p class="section-subtitle">rwd captures your thinking, not just your usage graphs.</p>
-          <div class="comparison-grid">
-            <div class="comparison-card comparison-other">
-              <div class="comparison-label">Typical usage analytics</div>
-              <ul class="comparison-list">
-                <li>Session counts and token trends</li>
-                <li>Tool usage timelines</li>
-                <li>High-level quantitative view</li>
-                <li>Limited narrative context</li>
-              </ul>
-            </div>
-            <div class="comparison-card comparison-rwd">
-              <div class="comparison-label">rwd daily journal</div>
-              <ul class="comparison-list">
-                <li>Work Summary + Key Decisions</li>
-                <li>Questions + Model Corrections</li>
-                <li>Daily Markdown for your own archive</li>
-                <li>Shareable summary and Slack handoff</li>
-              </ul>
-            </div>
+          <div class="feature-grid">
+            <article class="feature-card">
+              <h2 class="feature-title">Capture every session automatically</h2>
+              <p class="feature-desc">
+                rwd scans your AI agent sessions across projects and turns a day into one structured note. No copy-paste.
+              </p>
+              <p class="feature-note">Claude Code and Codex today. More agents on the way.</p>
+            </article>
+            <article class="feature-card">
+              <h2 class="feature-title">Rewind the decisions you made</h2>
+              <p class="feature-desc">
+                Each note keeps what you decided. What you wondered. What you corrected. The reasoning trail AI agents strip out.
+              </p>
+            </article>
+            <article class="feature-card">
+              <h2 class="feature-title">Redact before analysis</h2>
+              <p class="feature-desc">
+                Sensitive values are masked locally before anything touches an LLM. API keys, tokens, private IPs stay yours.
+              </p>
+            </article>
+            <article class="feature-card">
+              <h2 class="feature-title">Share without rewriting</h2>
+              <p class="feature-desc">
+                <code>rwd summary</code> gives you a progress report. <code>rwd slack</code> gives you a team-ready post. Copy-to-clipboard, done.
+              </p>
+            </article>
           </div>
         </div>
       </section>
 
       <div class="divider"></div>
 
-      <!-- Showcase 1: Session Capture -->
-      <section class="showcase fade-in">
-        <div class="showcase-inner">
-          <div class="showcase-text">
-            <span class="showcase-label">Session Capture</span>
-            <h2 class="showcase-title">Scan the day in one command</h2>
-            <p class="showcase-desc">
-              Run <code>rwd today</code> to discover sessions across Claude Code and Codex, then
-              turn the day into one structured journal entry.
+      <!-- Maker's Note -->
+      <section class="section fade-in" aria-label="Maker's Note">
+        <div class="container">
+          <div class="maker-note">
+            <p class="maker-note-body">
+              I code with Claude every day. The code ends up in git. My decisions, my corrections, the questions I was working through don't. I wanted to keep them, so I wrote rwd.
             </p>
-          </div>
-          <div class="mockup mockup-terminal">
-            <div class="mockup-header">
-              <div class="mockup-dots"><span></span><span></span><span></span></div>
-              <span class="mockup-title">Terminal</span>
-            </div>
-            <div class="mockup-body">
-              <div class="mockup-line">
-                <span class="mc-dim">$</span>
-                <span class="mc-primary">rwd today</span>
-              </div>
-              <div class="mockup-line"><span class="mc-green">⠋</span> Discovering sessions...</div>
-              <div class="mockup-line">
-                [discover] <span class="mc-primary">14</span> projects, <span class="mc-primary">82</span> log files scanned
-              </div>
-              <div class="mockup-line">
-                Codex sessions: <span class="mc-primary">8</span>
-              </div>
-              <div class="mockup-line"><span class="mc-green">⠋</span> Analyzing insights...</div>
-              <div class="mockup-line">
-                ▸ Session: <span class="mc-primary">019d86xx</span>
-              </div>
-              <div class="mockup-line">Summary: release workflow was finalized...</div>
-              <div class="mockup-line">
-                Markdown saved: <span class="mc-primary">~/Daily/2026-04-13.md</span>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      <!-- Showcase 2: Structured Journal -->
-      <section class="showcase fade-in">
-        <div class="showcase-inner showcase-inner--reversed">
-          <div class="showcase-text">
-            <span class="showcase-label">Structured Journal</span>
-            <h2 class="showcase-title">Same outline, every single day</h2>
-            <p class="showcase-desc">
-              rwd keeps each day readable with stable sections: Work Summary, Key Decisions,
-              Questions, and Model Corrections.
-            </p>
-          </div>
-          <div class="mockup mockup-note">
-            <div class="mockup-header">
-              <div class="mockup-dots"><span></span><span></span><span></span></div>
-              <span class="mockup-title">2026-04-13.md</span>
-            </div>
-            <div class="mockup-body">
-              <div class="md-heading">## Work Summary</div>
-              <div class="md-text">- Stabilized release flow and validated checks.</div>
-              <div class="md-heading">## Key Decisions</div>
-              <div class="md-text">
-                - <span class="mc-bold">Root-cause fix over workaround</span>
-              </div>
-              <div class="md-heading">## Questions &amp; Curiosities</div>
-              <div class="md-text">- Should automated sessions be included by default?</div>
-              <div class="md-heading">## Model Corrections</div>
-              <div class="md-text">
-                - <span class="mc-muted">Model:</span> Context7 was unavailable
-              </div>
-              <div class="md-text">
-                <span class="mc-green">Fix:</span> Retried after MCP connection
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      <!-- Showcase 3: Corrections & Learning -->
-      <section class="showcase fade-in">
-        <div class="showcase-inner">
-          <div class="showcase-text">
-            <span class="showcase-label">Corrections &amp; Learning</span>
-            <h2 class="showcase-title">Capture what changed your mind</h2>
-            <p class="showcase-desc">
-              rwd highlights correction loops and lessons learned, so your journal records why the
-              final solution changed.
-            </p>
-          </div>
-          <div class="mockup mockup-code">
-            <div class="mockup-header">
-              <div class="mockup-dots"><span></span><span></span><span></span></div>
-              <span class="mockup-title">Model vs Fix</span>
-            </div>
-            <div class="mockup-body">
-              <div class="mockup-line">
-                Model: "Local bubblewrap binary should be enough."
-              </div>
-              <div class="mockup-line">
-                Fix: Set <span class="mc-green">setuid</span> on /usr/bin/bwrap.
-              </div>
-              <div class="mockup-line">
-                ---
-              </div>
-              <div class="mockup-line mockup-gap">
-                TIL: PATH duplication can mimic duplicate installs.
-              </div>
-              <div class="mockup-line">
-                TIL: Existing tags can skip automated release workflows.
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      <!-- Showcase 4: Privacy Guardrails -->
-      <section class="showcase fade-in">
-        <div class="showcase-inner showcase-inner--reversed">
-          <div class="showcase-text">
-            <span class="showcase-label">Privacy Guardrails</span>
-            <h2 class="showcase-title">Redaction runs before analysis</h2>
-            <p class="showcase-desc">
-              Sensitive values are masked locally first, so your daily journal keeps context while
-              reducing accidental exposure.
-            </p>
-          </div>
-          <div class="mockup mockup-obsidian">
-            <div class="mockup-header">
-              <div class="mockup-dots"><span></span><span></span><span></span></div>
-              <span class="mockup-title">Redactor</span>
-            </div>
-            <div class="mockup-body">
-              <div class="mockup-sidebar">
-                <div class="mc-muted mockup-sidebar-label">Input</div>
-                <div class="mockup-sidebar-item mockup-sidebar-item--active">OPENAI_KEY=sk-...</div>
-                <div class="mockup-sidebar-item">Bearer eyJhbGciOi...</div>
-                <div class="mockup-sidebar-item">Server: 192.168.1.42</div>
-              </div>
-              <div class="mockup-preview">
-                <div class="md-heading"># Redacted Output</div>
-                <div class="md-heading">## Before LLM Analysis</div>
-                <div class="md-text">OPENAI_KEY=[REDACTED:API_KEY]</div>
-                <div class="md-text">[REDACTED:BEARER_TOKEN]</div>
-                <div class="md-text">Server: [REDACTED:PRIVATE_IP]</div>
-                <div class="md-heading">## Summary</div>
-                <div class="md-text">
-                  - <span class="mc-bold">Redacted:</span> API_KEY, BEARER_TOKEN, PRIVATE_IP
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      <!-- Showcase 5: Daily Summary -->
-      <section class="showcase fade-in">
-        <div class="showcase-inner">
-          <div class="showcase-text">
-            <span class="showcase-label">Daily Summary</span>
-            <h2 class="showcase-title">Generate a shareable day recap</h2>
-            <p class="showcase-desc">
-              <code>rwd summary</code> condenses sessions into a clean progress report grouped by
-              topic. Good for personal logs and standup prep.
-            </p>
-          </div>
-          <div class="mockup mockup-terminal">
-            <div class="mockup-header">
-              <div class="mockup-dots"><span></span><span></span><span></span></div>
-              <span class="mockup-title">Terminal</span>
-            </div>
-            <div class="mockup-body">
-              <div class="mockup-line">
-                <span class="mc-dim">$</span>
-                <span class="mc-primary">rwd summary --lang en</span>
-              </div>
-              <div class="mockup-line">&nbsp;</div>
-              <div class="mockup-line">
-                <span class="mc-bold">=== Development Progress ===</span>
-              </div>
-              <div class="mockup-line"><span class="mc-bold">### Codex Environment</span></div>
-              <div class="mockup-line">- Removed recurring bubblewrap warning.</div>
-              <div class="mockup-line">&nbsp;</div>
-              <div class="mockup-line">
-                <span class="mc-bold">### rwd</span>
-              </div>
-              <div class="mockup-line">- Completed release flow for v0.13.10.</div>
-              <div class="mockup-line">&nbsp;</div>
-              <div class="mockup-line"><span class="mc-green">✓</span> Copied to clipboard</div>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      <!-- Showcase 6: Slack Handoff -->
-      <section class="showcase fade-in">
-        <div class="showcase-inner showcase-inner--reversed">
-          <div class="showcase-text">
-            <span class="showcase-label">Slack Handoff</span>
-            <h2 class="showcase-title">Post updates without rewriting</h2>
-            <p class="showcase-desc">
-              <code>rwd slack</code> turns your journal into a team-ready update and copies it
-              directly to clipboard.
-            </p>
-          </div>
-          <div class="mockup mockup-terminal">
-            <div class="mockup-header">
-              <div class="mockup-dots"><span></span><span></span><span></span></div>
-              <span class="mockup-title">Terminal</span>
-            </div>
-            <div class="mockup-body">
-              <div class="mockup-line">
-                <span class="mc-dim">$</span>
-                <span class="mc-primary">rwd slack --lang en</span>
-              </div>
-              <div class="mockup-line">&nbsp;</div>
-              <div class="mockup-line">
-                <span class="mc-bold">[Today's Work Update]</span>
-              </div>
-              <div class="mockup-line">- Session classification flow stabilized.</div>
-              <div class="mockup-line">- Release workflow validated and completed.</div>
-              <div class="mockup-line">- Security guardrails and checks were improved.</div>
-              <div class="mockup-line">&nbsp;</div>
-              <div class="mockup-line"><span class="mc-green">✓</span> Copied to clipboard</div>
-            </div>
+            <p class="maker-note-sign">Jinwoo</p>
           </div>
         </div>
       </section>
@@ -541,7 +318,7 @@
       <!-- Install -->
       <section class="section fade-in" id="install">
         <div class="container">
-          <h2 class="section-title install-title">Install in seconds</h2>
+          <h2 class="section-title install-title">Install</h2>
           <div class="section-subtitle-spacer"></div>
           <div class="install-blocks">
             <div class="install-block">
@@ -563,7 +340,7 @@
             </div>
           </div>
           <p class="install-note">
-            Native Windows is not supported. Please use
+            Native Windows is not supported. Use
             <a href="https://learn.microsoft.com/en-us/windows/wsl/install" target="_blank" rel="noopener"
               ><strong><u>WSL2</u></strong></a
             >.
@@ -580,66 +357,47 @@
           <div class="faq-list">
             <div class="faq-item">
               <button class="faq-question" aria-expanded="false">
-                <span>Which AI tools are supported?</span>
+                <span>Which AI agents does rwd read?</span>
                 <span class="faq-icon">+</span>
               </button>
               <div class="faq-answer">
-                <p>rwd supports Claude Code and Codex.</p>
+                <p>Claude Code and Codex today. More CLIs on the way.</p>
               </div>
             </div>
             <div class="faq-item">
               <button class="faq-question" aria-expanded="false">
-                <span>Where are notes saved?</span>
+                <span>Where do the notes go?</span>
                 <span class="faq-icon">+</span>
               </button>
               <div class="faq-answer">
-                <p>Output is saved as Markdown to any directory you choose. Obsidian is optional.</p>
+                <p>Any folder you choose, as Markdown. Works well with Obsidian but doesn't require it.</p>
               </div>
             </div>
             <div class="faq-item">
               <button class="faq-question" aria-expanded="false">
-                <span>Can I choose output language?</span>
+                <span>English or Korean output?</span>
                 <span class="faq-icon">+</span>
               </button>
               <div class="faq-answer">
-                <p>Yes. Use <code>--lang en</code> or <code>--lang ko</code> on today, summary, and slack commands.</p>
+                <p>Both. Add <code>--lang en</code> or <code>--lang ko</code> to <code>today</code>, <code>summary</code>, or <code>slack</code>.</p>
               </div>
             </div>
             <div class="faq-item">
               <button class="faq-question" aria-expanded="false">
-                <span>What do I need to run rwd?</span>
+                <span>What does it cost?</span>
                 <span class="faq-icon">+</span>
               </button>
               <div class="faq-answer">
-                <p>rwd is MIT licensed and open source. You need your own API key for the configured provider.</p>
+                <p>rwd is free and MIT licensed. You bring your own API key for whichever model it uses.</p>
               </div>
             </div>
             <div class="faq-item">
               <button class="faq-question" aria-expanded="false">
-                <span>Why does rwd not run directly on Windows?</span>
+                <span>Is my data sent raw to the model?</span>
                 <span class="faq-icon">+</span>
               </button>
               <div class="faq-answer">
-                <p>
-                  Native Windows is not supported. Please use WSL2. Install WSL2, open a Linux
-                  shell (for example Ubuntu), then run
-                  <code
-                    >curl -fsSL https://raw.githubusercontent.com/gigagookbob/rwd/main/install.sh |
-                    sh</code
-                  >.
-                </p>
-              </div>
-            </div>
-            <div class="faq-item">
-              <button class="faq-question" aria-expanded="false">
-                <span>Is data redacted before analysis?</span>
-                <span class="faq-icon">+</span>
-              </button>
-              <div class="faq-answer">
-                <p>
-                  Yes. Logs are processed locally, and sensitive values like API keys, bearer
-                  tokens, and private IPs are masked before LLM analysis.
-                </p>
+                <p>No. API keys, bearer tokens, and private IPs are masked locally before anything is sent.</p>
               </div>
             </div>
           </div>
@@ -649,7 +407,8 @@
       <!-- Footer CTA -->
       <section class="footer-cta">
         <div class="container">
-          <h2 class="footer-cta-title">Rewind today. Keep the reasoning.</h2>
+          <h2 class="footer-cta-title">Rewind your day.</h2>
+          <p class="footer-cta-sub">Keep every decision you make.</p>
           <div class="hero-cta">
             <a href="#install" class="btn btn-primary">Install rwd</a>
           </div>
@@ -691,7 +450,7 @@
         </div>
         <div class="footer-divider"></div>
         <div class="footer-bottom">
-          <span>&copy; 2026 GookbobWolrd Inc. All rights reserved.</span>
+          <span>&copy; 2026 GookbobWorld Inc. All rights reserved.</span>
         </div>
       </div>
     </footer>

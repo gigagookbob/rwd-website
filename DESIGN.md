@@ -22,8 +22,8 @@ Key characteristics:
 - **Border** (`#27272a`): separators, card outlines, controls
 - **Text Primary** (`#fafafa`): headings, strong labels, active items
 - **Text Secondary** (`#a1a1aa`): default body copy
-- **Text Muted** (`#71717a`): captions, helper text, labels
-- **Text Dim** (`#52525b`): inactive states, secondary chrome text
+- **Text Muted** (`#a1a1aa`): captions, helper text, labels (WCAG AA 4.5:1 on `--bg-primary`)
+- **Text Dim** (`#8a8a94`): inactive states, secondary chrome text (WCAG AA 4.5:1 on `--bg-primary` and `--bg-secondary`)
 
 ### Semantic Accent Tokens
 - **Accent Green** (`#22c55e`): success states, copied state, active/positive indicators
@@ -194,7 +194,7 @@ Touch and readability:
 - Border: `#27272a`
 - Primary text: `#fafafa`
 - Body text: `#a1a1aa`
-- Muted text: `#71717a`
+- Muted text: `#a1a1aa`
 - Success accent: `#22c55e`
 - Primary CTA: background `#fafafa`, text `#09090b`
 
