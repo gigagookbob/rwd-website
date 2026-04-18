@@ -59,4 +59,3 @@ Vercel 정적 배포. `vercel.json`에 `css/`, `js/`, `assets/` 경로에 대해
 
 - 커밋 메시지: conventional commits (`feat:`, `fix:`, `style:`, `refactor:`, `docs:`)
 - i18n 시스템은 제거됨 — 현재 영어 전용
-- `assets/terminal-output.png` — 터미널 데모 이미지 (Retina PNG)

@@ -142,7 +142,7 @@ No copy changes. Existing terminal screenshot markup remains. Image `alt` text u
 Body (italic):
 > I code with Claude every day. The code ends up in git. My decisions, my corrections, the questions I was working through don't. I wanted to keep them, so I wrote rwd.
 
-Signature: `Jinwoo`
+Signature: `gigagookbob`
 
 ### 5.6 Install
 - Section title: `Install` *(was `Install in seconds`)*
