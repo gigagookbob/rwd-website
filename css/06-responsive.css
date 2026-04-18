@@ -1,27 +1,43 @@
-/* === Responsive === */
-@media (max-width: 640px) {
-  section > .container,
-  footer > .container {
-    margin-left: 0;
-    margin-right: 0;
+/* === Responsive ===
+ * Layout breathes via fluid `--gutter` and `clamp()` everywhere.
+ * Breakpoints below only handle structural changes (stacking grids,
+ * collapsing nav chrome) that fluid sizing alone cannot express.
+ */
+
+/* Tablet: stack the showcase 45/55 grid before columns get cramped */
+@media (max-width: 768px) {
+  .showcase-inner,
+  .showcase-inner--reversed {
+    grid-template-columns: 1fr;
+    gap: 28px;
+    direction: ltr;
   }
 
+  .showcase-text {
+    order: 2;
+    max-width: none;
+  }
+
+  .mockup {
+    order: 1;
+  }
+}
+
+/* Mobile */
+@media (max-width: 640px) {
   .nav-github-btn span {
     display: none;
-  }
-
-  .hero {
-    padding: 80px 0 48px;
-  }
-
-  .hero-title {
-    font-size: 42px;
-    letter-spacing: -2px;
   }
 
   .hero-cta {
     flex-direction: column;
     align-items: center;
+  }
+
+  .hero-cta .btn {
+    width: 100%;
+    max-width: 280px;
+    justify-content: center;
   }
 
   .terminal-body {
@@ -57,32 +73,6 @@
   .rwd-list li,
   .rwd-corrections {
     font-size: 12.5px;
-  }
-
-  .showcase {
-    padding: 64px 0;
-  }
-
-  .showcase-inner,
-  .showcase-inner--reversed {
-    grid-template-columns: 1fr;
-    gap: 28px;
-    margin: 0;
-    direction: ltr;
-  }
-
-  .showcase-text {
-    order: 2;
-    max-width: none;
-  }
-
-  .mockup {
-    order: 1;
-  }
-
-  .showcase-title {
-    font-size: 24px;
-    letter-spacing: -0.4px;
   }
 
   .mockup-progress .mockup-body {
@@ -134,11 +124,6 @@
     gap: 24px;
   }
 
-  .faq-title {
-    font-size: 28px;
-    letter-spacing: -0.6px;
-  }
-
   .faq-question {
     font-size: 13px;
     padding: 16px 0;
@@ -148,11 +133,25 @@
     padding-right: 0;
   }
 
-  .install-title {
-    font-size: 22px;
+  .footer-top {
+    flex-direction: column;
+    gap: 20px;
+  }
+}
+
+/* Small phones */
+@media (max-width: 420px) {
+  .install-block {
+    padding: 14px 16px;
+    gap: 12px;
   }
 
-  .footer-cta-title {
-    font-size: 22px;
+  .install-cmd {
+    font-size: 12px;
+  }
+
+  .footer-nav {
+    flex-wrap: wrap;
+    gap: 14px 18px;
   }
 }
