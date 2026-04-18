@@ -207,15 +207,15 @@
 
 /* === Showcase layout === */
 .showcase {
-  padding: 96px 0;
+  padding: clamp(56px, 7vw, 96px) 0;
 }
 
 .showcase-inner {
   display: grid;
   grid-template-columns: 45fr 55fr;
-  gap: 64px;
+  gap: clamp(32px, 5vw, 64px);
   align-items: center;
-  margin: 0 320px;
+  padding-inline: var(--gutter);
 }
 
 .showcase-inner--reversed {
@@ -242,7 +242,7 @@
 }
 
 .showcase-title {
-  font-size: 30px;
+  font-size: clamp(24px, 2.6vw, 30px);
   font-weight: 700;
   color: var(--text-primary);
   letter-spacing: -0.6px;

@@ -11,8 +11,8 @@
 
 section > .container,
 footer > .container {
-  margin-left: 320px;
-  margin-right: 320px;
+  padding-left: var(--gutter);
+  padding-right: var(--gutter);
 }
 
 .section-title {
