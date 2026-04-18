@@ -11,39 +11,3 @@
   opacity: 1;
   transform: translateY(0);
 }
-
-/* === Inline Text Utilities === */
-.mc-dim {
-  color: var(--text-dim);
-}
-
-.mc-primary {
-  color: var(--text-primary);
-}
-
-.mc-green {
-  color: var(--accent-green);
-}
-
-.mc-muted {
-  color: var(--text-muted);
-}
-
-.mc-bold {
-  color: var(--text-primary);
-  font-weight: 600;
-}
-
-/* === Spacing Utilities === */
-.mockup-sep {
-  margin: 12px 0;
-  text-align: center;
-}
-
-.mockup-gap {
-  margin-top: 12px;
-}
-
-.mockup-sidebar-label {
-  margin-bottom: 4px;
-}
