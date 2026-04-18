@@ -126,13 +126,15 @@ Key characteristics:
 
 ### Containers & Width
 - Global content container max width: none (full-width layout).
-- Horizontal page padding baseline: `0px`.
-- Direct page wrappers (`section > .container`, `section > .showcase-inner`, `footer > .container`) use `320px` horizontal margins.
+- Direct page wrappers (`.nav-inner`, `section > .container`, `section > .showcase-inner`, `footer > .container`) use a shared fluid `--gutter` token: `clamp(16px, calc((100vw - var(--content-width)) / 2), 320px)` with `--content-width: 960px`.
+- That formula caps gutters at `320px` on wide screens (≥1600px viewport, matching the original design), shrinks them proportionally between 960–1600px so the inner content holds at ~960px, and floors at `16px` below 960px so content keeps comfortable edge padding all the way down to ~320px.
 
 ### Section Rhythm
-- Default section padding: `80px 0`.
-- Hero: `80px 0 40px`.
-- Terminal section: `160px 0 80px`.
+- Default section padding: `clamp(48px, 6vw, 80px) 0`.
+- Hero: `clamp(48px, 6vw, 80px) 0 clamp(24px, 4vw, 40px)`.
+- Terminal section: `clamp(64px, 12vw, 160px) 0 clamp(40px, 6vw, 80px)`.
+- Showcase: `clamp(56px, 7vw, 96px) 0`.
+- Footer CTA: `clamp(56px, 7vw, 80px) 0`.
 - Major sections separated with 1px divider line using `--border`.
 
 ### Grid Usage
@@ -177,22 +179,38 @@ Rules:
 
 ## 8. Responsive Behavior
 
-Primary breakpoint: `max-width: 640px`
+Sizing flows from `clamp()` and the fluid `--gutter` token, so the layout adapts continuously between ~320px and 4K. Media queries are reserved for **structural** changes that fluid sizing alone cannot express (collapsing grids, hiding nav chrome).
 
-Behavior at mobile:
+### Fluid type & spacing
+- Hero title: `clamp(36px, 7vw, 72px)`, letter-spacing `clamp(-3px, -0.25vw, -1px)`.
+- Showcase title: `clamp(24px, 2.6vw, 30px)`.
+- FAQ title: `clamp(24px, 2.6vw, 30px)`.
+- Install title / Footer CTA title: `clamp(22px, 2.8vw, 32px)`.
+- Showcase column gap: `clamp(32px, 5vw, 64px)`.
+- All major section paddings use `clamp()` (see Section Rhythm).
+- `--gutter` provides consistent fluid horizontal padding everywhere.
+
+### Breakpoint: `max-width: 768px` (tablet)
+- Showcase 45/55 grid collapses to one column. The mockup sits above the text (via `order`) regardless of the desktop `direction: rtl` flip.
+
+### Breakpoint: `max-width: 640px` (mobile)
 - Hide GitHub button text label in nav (`.nav-github-btn span`).
-- Hero title scales to 42px and CTA stack becomes vertical.
+- Hero CTA stack becomes vertical; buttons fill width up to 280px.
 - Hero terminal: banner ASCII drops to 8px, summary card expands to fill width, meta rows tighten.
-- Showcase grid collapses to one column; the mockup always sits above the text (via `order`) regardless of desktop direction.
-- Showcase title scales to 24px; section rhythm to `64px 0`.
+- Mockup variants tighten font/padding; note mockup `max-height` drops to 440px so the fade-out stays visible.
 - Redact diff stacks raw → masked vertically with a horizontal border between them.
 - Chat mockup avatar shrinks 40→32px.
-- Note mockup reduces padding and lowers `max-height` to 440px so the fade-out stays visible.
-- Mockup content allows horizontal scroll where needed (the terminal body has `overflow-x: auto`).
-- Footer CTA title scales down to 22px.
+- FAQ two-column layout collapses to one column.
+- Footer top stacks vertically.
 
-Touch and readability:
-- Keep interactive controls at current comfortable sizes (buttons and FAQ rows).
+### Breakpoint: `max-width: 420px` (small phones)
+- Install block tightens padding and reduces command font to 12px.
+- Footer nav allows wrapping.
+
+### Touch and readability
+- Buttons and FAQ rows stay at desktop tap-target sizes.
+- Mockup content allows horizontal scroll where needed (the terminal body has `overflow-x: auto`).
+- Body has `overflow-x: hidden` to prevent any incidental horizontal scroll from off-screen elements.
 - Preserve mono command legibility in install blocks and mockups.
 
 ## 9. Agent Prompt Guide

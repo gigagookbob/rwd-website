@@ -18,6 +18,7 @@ body {
   background: var(--bg-primary);
   color: var(--text-secondary);
   line-height: 1.6;
+  overflow-x: hidden;
 }
 
 a {
