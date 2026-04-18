@@ -466,3 +466,24 @@
 .footer-bottom {
   color: var(--text-dim);
 }
+
+/* === Maker's Note === */
+.maker-note {
+  max-width: 620px;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.maker-note-body {
+  font-style: italic;
+  font-size: 16px;
+  line-height: 1.7;
+  color: var(--text-secondary);
+  margin: 0;
+}
+
+.maker-note-sign {
+  margin-top: 16px;
+  font-size: 13px;
+  color: var(--text-muted);
+}
